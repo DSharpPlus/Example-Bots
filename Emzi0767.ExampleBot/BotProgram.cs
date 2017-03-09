@@ -65,10 +65,10 @@ namespace Emzi0767.ExampleBot
             // Now let's add something basic to our bot
             // For instance, let's make our bot respond 
             // pong to every message that says ping
-            this.Client.MessageCreated += (o, e) =>
+            this.Client.MessageCreated += async e =>
             {
                 if (e.Message.Content.ToLower() == "ping")
-                    e.Channel.SendMessage("pong").GetAwaiter().GetResult();
+                    await e.Channel.SendMessage("pong");
             };
 
             // Finally, let's connect
