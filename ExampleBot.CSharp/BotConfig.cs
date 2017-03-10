@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Emzi0767.ExampleBot
+namespace ExampleBot.CSharp
 {
     public sealed class BotConfig
     {

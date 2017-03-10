@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using DSharpPlus;
 using Newtonsoft.Json;
 
-namespace Emzi0767.ExampleBot
+namespace ExampleBot.CSharp
 {
     public sealed class BotProgram
     {

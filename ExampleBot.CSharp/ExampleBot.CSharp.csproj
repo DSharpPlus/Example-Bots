@@ -7,8 +7,8 @@
     <ProjectGuid>{8E81D151-394C-4547-BDE3-614FF0438BC0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Emzi0767.ExampleBot</RootNamespace>
-    <AssemblyName>Emzi0767.ExampleBot</AssemblyName>
+    <RootNamespace>ExampleBot.CSharp</RootNamespace>
+    <AssemblyName>ExampleBot.CSharp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

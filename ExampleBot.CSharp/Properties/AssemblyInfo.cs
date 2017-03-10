@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DSharpPlus example bot")]
-[assembly: AssemblyDescription("An example bot that shows how to use the DSharpPlus library")]
+[assembly: AssemblyTitle("DSharpPlus example bot (C#)")]
+[assembly: AssemblyDescription("An example C# bot that shows how to use the DSharpPlus library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Emzi0767")]
-[assembly: AssemblyProduct("Emzi0767.ExampleBot")]
+[assembly: AssemblyProduct("ExampleBot.CSharp")]
 [assembly: AssemblyCopyright("Copyright © Emzi0767 2017")]
 [assembly: AssemblyTrademark("Emzi0767 2017")]
 [assembly: AssemblyCulture("")]
