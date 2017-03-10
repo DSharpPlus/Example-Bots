@@ -22,7 +22,7 @@ In order to run the bot, you must first create an application for it, build the 
 
 1. Open the project, and compile it in **Release** mode.
 2. Go to `<project path>`, and copy the `config.json` file there.
-3. Now go to `Emzi0767.ExampleBot/bin/Release`, paste that file here.
+3. Now go to `ExampleBot.<language>/bin/Release`, paste that file here.
 4. Open it with Notepad. Replace `Put your bot token here` with your token (do not remove the quotes). Save it.
 5. Our bot is now configured, but we need to add it to our server first.
 
@@ -35,7 +35,7 @@ In order to run the bot, you must first create an application for it, build the 
 
 ###Running the bot
 
-Now start `Emzi0767.ExampleBot.exe`. Congratulations! [Your bot is running](http://i.imgur.com/VXpCt1P.png)! Type `ping` in your chat, and [it should respond with `pong`](http://i.imgur.com/ymnecfp.png)! If it does, it's working.
+Now start `ExampleBot.<language>.exe`. Congratulations! [Your bot is running](http://i.imgur.com/VXpCt1P.png)! Type `ping` in your chat, and [it should respond with `pong`](http://i.imgur.com/ymnecfp.png)! If it does, it's working.
 
 ##Where to now?
 
