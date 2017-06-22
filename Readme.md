@@ -4,6 +4,13 @@ This is an example bot for the DSharpPlus library.
 
 This is a very basic bot, but it should give you a good idea of where to start.
 
+## Requirements
+
+These projects were made using Visual Studio 2017, and they target .NET Core 1.1. You will need one of the following to open and build the projects:
+
+* [**Visual Studio 2017 Community**](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) with **.NET Core cross-platform development** installed.
+* [**Visual Studio Code**](https://code.visualstudio.com/download) with **C#** extension, as well as [**.NET Core SDK**](https://www.microsoft.com/net/download/core) installed.
+
 ## How to run the bot?
 
 In order to run the bot, you must first create an application for it, build the bot, then configure it.
@@ -20,10 +27,10 @@ In order to run the bot, you must first create an application for it, build the 
 
 ### Building the project and configuring the bot
 
-1. Open the project, and compile it in **Release** mode.
+1. Open the project, and compile it.
 2. Go to `<project path>`, and copy the `config.json` file there.
-3. Now go to `ExampleBot.<language>/bin/Release`, paste that file here.
-4. Open it with Notepad. Replace `Put your bot token here` with your token (do not remove the quotes). Save it.
+3. Now go to `ExampleBot.<language>`, paste that file here.
+4. Open it with Notepad. Replace the placeholder values (do not remove the quotes) with your actual token and command prefix. Save it.
 5. Our bot is now configured, but we need to add it to our server first.
 
 ### Adding the bot to your server
@@ -35,7 +42,8 @@ In order to run the bot, you must first create an application for it, build the 
 
 ### Running the bot
 
-Now start `ExampleBot.<language>.exe`. Congratulations! [Your bot is running](http://i.imgur.com/VXpCt1P.png)! Type `ping` in your chat, and [it should respond with `pong`](http://i.imgur.com/ymnecfp.png)! If it does, it's working.
+1. Go back to the IDE and hit **Debug**.
+2. Congratulations! [Your bot is running](http://i.imgur.com/VXpCt1P.png)! Type `::ping` in your chat, and [it should respond with `pong`](http://i.imgur.com/ymnecfp.png)! If it does, it's working.
 
 ## Where to now?
 
@@ -47,5 +55,7 @@ If you want to get more help, join the unofficial [Discord API server](https://d
 
 ## Also check out
 
+* [Naamloos' example bot](https://github.com/NaamloosDT/DSharpPlus-example)
 * [DSharpPlus source on GitHub](https://github.com/NaamloosDT/DSharpPlus)
 * [DSharpPlus Discord server](https://discord.gg/0oZpaYcAjfvkDuE4)
+* [#dotnet_dsharpplus on Discord API server](https://discord.gg/N4WeVd)
