@@ -1,3 +1,4 @@
 {
-  "token": "Put your bot token here"
+  "token": "Put your bot token here",
+  "prefix": "::"
 }
