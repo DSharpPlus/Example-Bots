@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex01", "DSPlus.Examples.CSharp.Ex01\DSPlus.Examples.CSharp.Ex01.csproj", "{DFCFF093-5B28-4CD8-BF3E-433F41B7DEF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex02", "DSPlus.Examples.CSharp.Ex02\DSPlus.Examples.CSharp.Ex02.csproj", "{D0320285-B46A-4FFE-8911-300BA2AEEC01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFCFF093-5B28-4CD8-BF3E-433F41B7DEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFCFF093-5B28-4CD8-BF3E-433F41B7DEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFCFF093-5B28-4CD8-BF3E-433F41B7DEF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
