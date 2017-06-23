@@ -240,3 +240,13 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Configs
+DSPlus.Examples.CSharp.Ex01/config.json
+DSPlus.Examples.CSharp.Ex02/config.json
+DSPlus.Examples.CSharp.Ex03/config.json
+DSPlus.Examples.CSharp.Ex04/config.json
+DSPlus.Examples.VBNet.Ex01/config.json
+DSPlus.Examples.VBNet.Ex02/config.json
+DSPlus.Examples.VBNet.Ex03/config.json
+DSPlus.Examples.VBNet.Ex04/config.json
