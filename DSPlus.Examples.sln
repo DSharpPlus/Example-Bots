@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex02", "DSPlus.Examples.CSharp.Ex02\DSPlus.Examples.CSharp.Ex02.csproj", "{D0320285-B46A-4FFE-8911-300BA2AEEC01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex03", "DSPlus.Examples.CSharp.Ex03\DSPlus.Examples.CSharp.Ex03.csproj", "{DDEE1B5D-1680-4718-9795-8F84B6BB747C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex04", "DSPlus.Examples.CSharp.Ex04\DSPlus.Examples.CSharp.Ex04.csproj", "{976B9057-59C4-4FE3-8CC1-E6096176ED39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0320285-B46A-4FFE-8911-300BA2AEEC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDEE1B5D-1680-4718-9795-8F84B6BB747C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDEE1B5D-1680-4718-9795-8F84B6BB747C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDEE1B5D-1680-4718-9795-8F84B6BB747C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDEE1B5D-1680-4718-9795-8F84B6BB747C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
