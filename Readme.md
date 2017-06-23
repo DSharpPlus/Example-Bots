@@ -4,6 +4,13 @@ This is an example bot for the DSharpPlus library.
 
 This is a very basic bot, but it should give you a good idea of where to start.
 
+## Example directory
+
+* **Example 1**: Introduces very basic bot skeleton. The bot simply connects to guilds, and prints some information to console.
+* **Example 2**: Introduces CommandsNext. This bot also responds to several commands, as well as presents several CNext concepts and examples of use.
+* **Example 3**: Introduces Interactivity. This bot has several commands that interact with the user in different ways. Presented are several examples of use.
+* **Example 4**: Introduces VoiceNext. This bot has the ability to connect to voice channels and play music in them. Presented is a simple bot that broadcasts audio from specified file in a queued manner.
+
 ## Requirements
 
 These projects were made using Visual Studio 2017, and they target .NET Core 1.1. You will need one of the following to open and build the projects:
