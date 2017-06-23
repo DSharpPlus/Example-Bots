@@ -66,6 +66,18 @@ namespace DSPlus.Examples
             // then we want to instantiate our client
             this.Client = new DiscordClient(cfg);
 
+            // If you are on Windows 7, install 
+            // DSharpPlus.WebSocket.WebSocket4Net from NuGet,
+            // add appropriate usings, and uncomment the following
+            // line
+            //this.Client.SetWebSocketClient<WebSocket4NetClient>();
+
+            // If you are using MOno, install 
+            // DSharpPlus.WebSocket.WebSocketSharp from NuGet,
+            // add appropriate usings, and uncomment the following
+            // line
+            //this.Client.SetWebSocketClient<WebSocketSharpClient>();
+
             // next, let's hook some events, so we know
             // what's going on
             this.Client.Ready += this.Client_Ready;
