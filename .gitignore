@@ -250,3 +250,6 @@ DSPlus.Examples.VBNet.Ex01/config.json
 DSPlus.Examples.VBNet.Ex02/config.json
 DSPlus.Examples.VBNet.Ex03/config.json
 DSPlus.Examples.VBNet.Ex04/config.json
+/DSPlus.Examples.CSharp.Ex04/libsodium.dll
+/DSPlus.Examples.CSharp.Ex04/libopus.dll
+/DSPlus.Examples.CSharp.Ex04/ffmpeg.exe
