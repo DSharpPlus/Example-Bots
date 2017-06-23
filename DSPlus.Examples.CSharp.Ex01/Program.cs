@@ -56,7 +56,7 @@ namespace DSPlus.Examples
             var cfg = new DiscordConfig
             {
                 Token = cfgjson.Token,
-                TokenType = TokenType.User,
+                TokenType = TokenType.Bot,
 
                 AutoReconnect = true,
                 LogLevel = LogLevel.Debug,
@@ -72,7 +72,7 @@ namespace DSPlus.Examples
             // line
             //this.Client.SetWebSocketClient<WebSocket4NetClient>();
 
-            // If you are using MOno, install 
+            // If you are using Mono, install 
             // DSharpPlus.WebSocket.WebSocketSharp from NuGet,
             // add appropriate usings, and uncomment the following
             // line
@@ -82,6 +82,7 @@ namespace DSPlus.Examples
             // what's going on
             this.Client.Ready += this.Client_Ready;
             this.Client.GuildAvailable += this.Client_GuildAvailable;
+            this.Client.ClientError += this.Client_ClientError;
 
             // finnaly, let's connect and log in
             await this.Client.ConnectAsync();
@@ -106,6 +107,18 @@ namespace DSPlus.Examples
             // let's log the name of the guild that was just
             // sent to our client
             e.Client.DebugLogger.LogMessage(LogLevel.Info, "ExampleBot", $"Guild available: {e.Guild.Name}", DateTime.Now);
+
+            // since this method is not async, let's return
+            // a completed task, so that no additional work
+            // is done
+            return Task.CompletedTask;
+        }
+
+        private Task Client_ClientError(ClientErrorEventArgs e)
+        {
+            // let's log the name of the guild that was just
+            // sent to our client
+            e.Client.DebugLogger.LogMessage(LogLevel.Error, "ExampleBot", $"Exception occured: {e.Exception.GetType()}: {e.Exception.Message}", DateTime.Now);
 
             // since this method is not async, let's return
             // a completed task, so that no additional work
