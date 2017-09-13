@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
+using DSharpPlus.Entities;
 using DSharpPlus.Interactivity;
 
 namespace DSPlus.Examples
@@ -19,7 +19,7 @@ namespace DSPlus.Examples
             var poll_options = options.Select(xe => xe.ToString());
 
             // then let's present the poll
-            var embed = new DiscordEmbed
+            var embed = new DiscordEmbedBuilder
             {
                 Title = "Poll time!",
                 Description = string.Join(" ", poll_options)
@@ -35,7 +35,7 @@ namespace DSPlus.Examples
 
             // collect and filter responses
             var poll_result = await interactivity.CollectReactionsAsync(msg, duration);
-            var results = poll_result.Where(xkvp => poll_options.Contains(xkvp.Key))
+            var results = poll_result.Reactions.Where(xkvp => poll_options.Contains(xkvp.Key.ToString()))
                 .Select(xkvp => $"{xkvp.Key}: {xkvp.Value}");
 
             // and finally post the results
@@ -64,7 +64,7 @@ namespace DSPlus.Examples
             if (msg != null)
             {
                 // announce the winner
-                await ctx.RespondAsync($"And the winner is: {msg.Author.Mention}");
+                await ctx.RespondAsync($"And the winner is: {msg.Message.Author.Mention}");
             }
             else
             {
@@ -90,14 +90,14 @@ namespace DSPlus.Examples
             if (em != null)
             {
                 // quote
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
-                    Color = em.Author is DiscordMember m ? m.Color : 0xFF00FF,
-                    Description = em.Content,
-                    Author = new DiscordEmbedAuthor
+                    Color = em.Message.Author is DiscordMember m ? m.Color : new DiscordColor(0xFF00FF),
+                    Description = em.Message.Content,
+                    Author = new DiscordEmbedBuilder.EmbedAuthor
                     {
-                        Name = em.Author is DiscordMember mx ? mx.DisplayName : em.Author.Username,
-                        Url = em.Author.AvatarUrl
+                        Name = em.Message.Author is DiscordMember mx ? mx.DisplayName : em.Message.Author.Username,
+                        Url = em.Message.Author.AvatarUrl
                     }
                 };
                 await ctx.RespondAsync("", embed: embed);
@@ -120,7 +120,7 @@ namespace DSPlus.Examples
             if (chn != null)
             {
                 // got 'em
-                await ctx.RespondAsync($"{ctx.User.Mention}, you typed in {chn.Mention}!");
+                await ctx.RespondAsync($"{ctx.User.Mention}, you typed in {chn.Channel.Mention}!");
             }
             else
             {

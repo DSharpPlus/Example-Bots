@@ -26,6 +26,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus;
+using DSharpPlus.EventArgs;
 using Newtonsoft.Json;
 
 namespace DSPlus.Examples
@@ -53,7 +54,7 @@ namespace DSPlus.Examples
             // next, let's load the values from that file
             // to our client's configuration
             var cfgjson = JsonConvert.DeserializeObject<ConfigJson>(json);
-            var cfg = new DiscordConfig
+            var cfg = new DiscordConfiguration
             {
                 Token = cfgjson.Token,
                 TokenType = TokenType.Bot,
@@ -66,11 +67,17 @@ namespace DSPlus.Examples
             // then we want to instantiate our client
             this.Client = new DiscordClient(cfg);
 
-            // If you are on Windows 7, install 
+            // If you are on Windows 7 and using .NETFX, install 
             // DSharpPlus.WebSocket.WebSocket4Net from NuGet,
             // add appropriate usings, and uncomment the following
             // line
             //this.Client.SetWebSocketClient<WebSocket4NetClient>();
+
+            // If you are on Windows 7 and using .NET Core, install 
+            // DSharpPlus.WebSocket.WebSocket4NetCore from NuGet,
+            // add appropriate usings, and uncomment the following
+            // line
+            //this.Client.SetWebSocketClient<WebSocket4NetCoreClient>();
 
             // If you are using Mono, install 
             // DSharpPlus.WebSocket.WebSocketSharp from NuGet,
@@ -78,11 +85,15 @@ namespace DSPlus.Examples
             // line
             //this.Client.SetWebSocketClient<WebSocketSharpClient>();
 
+            // if using any alternate socket client implementations, 
+            // remember to add the following to the top of this file:
+            //using DSharpPlus.Net.WebSocket;
+
             // next, let's hook some events, so we know
             // what's going on
             this.Client.Ready += this.Client_Ready;
             this.Client.GuildAvailable += this.Client_GuildAvailable;
-            this.Client.ClientError += this.Client_ClientError;
+            this.Client.ClientErrored += this.Client_ClientError;
 
             // finnaly, let's connect and log in
             await this.Client.ConnectAsync();

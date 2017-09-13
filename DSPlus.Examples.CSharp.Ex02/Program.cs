@@ -28,6 +28,8 @@ using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Exceptions;
+using DSharpPlus.Entities;
+using DSharpPlus.EventArgs;
 using Newtonsoft.Json;
 
 namespace DSPlus.Examples
@@ -56,7 +58,7 @@ namespace DSPlus.Examples
             // next, let's load the values from that file
             // to our client's configuration
             var cfgjson = JsonConvert.DeserializeObject<ConfigJson>(json);
-            var cfg = new DiscordConfig
+            var cfg = new DiscordConfiguration
             {
                 Token = cfgjson.Token,
                 TokenType = TokenType.Bot,
@@ -69,11 +71,17 @@ namespace DSPlus.Examples
             // then we want to instantiate our client
             this.Client = new DiscordClient(cfg);
 
-            // If you are on Windows 7, install 
+            // If you are on Windows 7 and using .NETFX, install 
             // DSharpPlus.WebSocket.WebSocket4Net from NuGet,
             // add appropriate usings, and uncomment the following
             // line
             //this.Client.SetWebSocketClient<WebSocket4NetClient>();
+
+            // If you are on Windows 7 and using .NET Core, install 
+            // DSharpPlus.WebSocket.WebSocket4NetCore from NuGet,
+            // add appropriate usings, and uncomment the following
+            // line
+            //this.Client.SetWebSocketClient<WebSocket4NetCoreClient>();
 
             // If you are using Mono, install 
             // DSharpPlus.WebSocket.WebSocketSharp from NuGet,
@@ -81,11 +89,15 @@ namespace DSPlus.Examples
             // line
             //this.Client.SetWebSocketClient<WebSocketSharpClient>();
 
+            // if using any alternate socket client implementations, 
+            // remember to add the following to the top of this file:
+            //using DSharpPlus.Net.WebSocket;
+
             // next, let's hook some events, so we know
             // what's going on
             this.Client.Ready += this.Client_Ready;
             this.Client.GuildAvailable += this.Client_GuildAvailable;
-            this.Client.ClientError += this.Client_ClientError;
+            this.Client.ClientErrored += this.Client_ClientError;
 
             // up next, let's set up our commands
             var ccfg = new CommandsNextConfiguration
@@ -165,7 +177,7 @@ namespace DSPlus.Examples
             return Task.CompletedTask;
         }
 
-        private Task Commands_CommandExecuted(CommandExecutedEventArgs e)
+        private Task Commands_CommandExecuted(CommandExecutionEventArgs e)
         {
             // let's log the name of the guild that was just
             // sent to our client
@@ -193,11 +205,13 @@ namespace DSPlus.Examples
                 var emoji = DiscordEmoji.FromName(e.Context.Client, ":no_entry:");
 
                 // let's wrap the response into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Access denied",
                     Description = $"{emoji} You do not have the permissions required to execute this command.",
-                    Color = 0xFF0000 // red
+                    Color = new DiscordColor(0xFF0000) // red
+                    // there are also some pre-defined colors available
+                    // as static members of the DiscordColor struct
                 };
                 await e.Context.RespondAsync("", embed: embed);
             }

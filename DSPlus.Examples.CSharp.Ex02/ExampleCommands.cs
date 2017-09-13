@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
+using DSharpPlus.Entities;
 
 namespace DSPlus.Examples
 {
@@ -189,13 +190,10 @@ namespace DSPlus.Examples
             await ctx.TriggerTypingAsync();
 
             // wrap it into an embed
-            var embed = new DiscordEmbed
+            var embed = new DiscordEmbedBuilder
             {
                 Title = "Pepe",
-                Image = new DiscordEmbedImage
-                {
-                    Url = "http://i.imgur.com/44SoSqS.jpg"
-                }
+                ImageUrl = "http://i.imgur.com/44SoSqS.jpg"
             };
             await ctx.RespondAsync("", embed: embed);
         }
@@ -224,13 +222,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Meme man",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/tEmKtNt.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/tEmKtNt.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -241,13 +236,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "UKIP pledge",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/ql76fCQ.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/ql76fCQ.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -258,13 +250,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Line of sight",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/ZuCUnEb.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/ZuCUnEb.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -275,13 +264,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Art",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/VkmmmQd.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/VkmmmQd.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -292,13 +278,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "When you see a meme",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/8GD0hbZ.jpg"
-                    }
+                    ImageUrl = "http://i.imgur.com/8GD0hbZ.jpg"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -309,13 +292,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "This is meme man",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/57vDOe6.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/57vDOe6.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -326,13 +306,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Deep dream",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/U666J6x.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/U666J6x.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -343,13 +320,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Meme with a sword?",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/T3FMXdu.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/T3FMXdu.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
@@ -360,13 +334,10 @@ namespace DSPlus.Examples
                 await ctx.TriggerTypingAsync();
 
                 // wrap it into an embed
-                var embed = new DiscordEmbed
+                var embed = new DiscordEmbedBuilder
                 {
                     Title = "Christmas spike",
-                    Image = new DiscordEmbedImage
-                    {
-                        Url = "http://i.imgur.com/uXIqUS7.png"
-                    }
+                    ImageUrl = "http://i.imgur.com/uXIqUS7.png"
                 };
                 await ctx.RespondAsync("", embed: embed);
             }
