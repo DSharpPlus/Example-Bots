@@ -151,7 +151,7 @@ namespace DSPlus.Examples
         }
     }
 
-    [Group("memes", CanInvokeWithoutSubcommand = true)] // this makes the class a group, but with a twist; the class now needs an ExecuteGroup method
+    [Group("memes", CanInvokeWithoutSubcommand = true)] // this makes the class a group, but with a twist; the class now needs an ExecuteGroupAsync method
     [Description("Contains some memes. When invoked without subcommand, returns a random one.")]
     [Aliases("copypasta")]
     public class ExampleExecutableGroup
@@ -162,7 +162,7 @@ namespace DSPlus.Examples
         // this is the group's command; unlike with other commands, 
         // any attributes on this one are ignored, but like other
         // commands, it can take arguments
-        public async Task ExecuteGroup(CommandContext ctx)
+        public async Task ExecuteGroupAsync(CommandContext ctx)
         {
             // let's give them a random meme
             var rnd = new Random();
@@ -217,7 +217,7 @@ namespace DSPlus.Examples
         [Group("mememan", CanInvokeWithoutSubcommand = true), Hidden]
         public class MemeMan
         {
-            public async Task ExecuteGroup(CommandContext ctx)
+            public async Task ExecuteGroupAsync(CommandContext ctx)
             {
                 await ctx.TriggerTypingAsync();
 

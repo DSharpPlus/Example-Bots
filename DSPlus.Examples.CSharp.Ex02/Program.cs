@@ -130,6 +130,9 @@ namespace DSPlus.Examples
             this.Commands.RegisterCommands<ExampleGrouppedCommands>();
             this.Commands.RegisterCommands<ExampleExecutableGroup>();
 
+            // set up our custom help formatter
+            this.Commands.SetHelpFormatter<SimpleHelpFormatter>();
+
             // finnaly, let's connect and log in
             await this.Client.ConnectAsync();
 
