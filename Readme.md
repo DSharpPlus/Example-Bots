@@ -1,8 +1,8 @@
-# DSharpPlus Example Bot
+# DSharpPlus Example Bots
 
-This is an example bot for the DSharpPlus library.
+These are example bots for DSharpPlus librar.
 
-This is a very basic bot, but it should give you a good idea of where to start.
+They are basic bots which are meant to introduce you to various aspects of the DSharpPlus library.
 
 ## Example directory
 
@@ -13,14 +13,16 @@ This is a very basic bot, but it should give you a good idea of where to start.
 
 ## Requirements
 
-These projects were made using Visual Studio 2017, and they target .NET Core 1.1. You will need one of the following to open and build the projects:
+These projects were made using Visual Studio 2017, and they target .NET Core 2.0. You will need one of the following to open and build the projects:
 
 * [**Visual Studio 2017 Community**](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) with **.NET Core cross-platform development** installed.
-* [**Visual Studio Code**](https://code.visualstudio.com/download) with **C#** extension, as well as [**.NET Core SDK**](https://www.microsoft.com/net/download/core) installed.
+* [**Visual Studio Code**](https://code.visualstudio.com/download) with **C#** extension.
+
+You will also need to install [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core) in both cases.
 
 ## How to run the bot?
 
-In order to run the bot, you must first create an application for it, build the bot, then configure it.
+In order to run the bots, you must first create an application for them, build the bots, then configure them.
 
 ### Create the application
 
@@ -34,9 +36,9 @@ In order to run the bot, you must first create an application for it, build the 
 
 ### Building the project and configuring the bot
 
-1. Open the project, and compile it.
+1. Open the project, select the startup bot, and compile it.
 2. Go to `<project path>`, and copy the `config.json` file there.
-3. Now go to `ExampleBot.<language>`, paste that file here.
+3. Now go to `DSPlus.Examples.<language>.Ex0n` (where `n` is the selected example), paste that file here.
 4. Open it with Notepad. Replace the placeholder values (do not remove the quotes) with your actual token and command prefix. Save it.
 5. Our bot is now configured, but we need to add it to our server first.
 
@@ -47,16 +49,16 @@ In order to run the bot, you must first create an application for it, build the 
 3. On the [page](http://i.imgur.com/QeH0o5S.png), select **your server** (1), and press **authorize** (2).
 4. [Done](http://i.imgur.com/LF1gpm2.png)! You can now run the bot!
 
-### Running the bot
+### Running the bots
 
 1. Go back to the IDE and hit **Debug**.
-2. Congratulations! [Your bot is running](http://i.imgur.com/VXpCt1P.png)! Type `::ping` in your chat, and [it should respond with `pong`](http://i.imgur.com/ymnecfp.png)! If it does, it's working.
+2. Congratulations! [Your bot is running](http://i.imgur.com/VXpCt1P.png)!
 
 ## Where to now?
 
-You might want to play around with the example, perhaps modify it a bit.
+You might want to play around with the examples, perhaps modify them a bit.
 
-You can find the documentation for DSharpPlus [over here](http://dsharpplus.readthedocs.io/).
+You can find the documentation for DSharpPlus [over here](https://dsharpplus.emzi0767.com/).
 
 If you want to get more help, join the unofficial [Discord API server](https://discord.gg/discord-api), and look for **#dotnet_dsharpplus** channel.
 
