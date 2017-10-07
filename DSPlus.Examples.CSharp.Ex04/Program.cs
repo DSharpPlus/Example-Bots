@@ -134,7 +134,7 @@ namespace DSPlus.Examples
             // and let's enable it
             this.Voice = this.Client.UseVoiceNext(vcfg);
 
-            // finnaly, let's connect and log in
+            // finally, let's connect and log in
             await this.Client.ConnectAsync();
 
             // for this example you will need to read the 
@@ -169,8 +169,8 @@ namespace DSPlus.Examples
 
         private Task Client_ClientError(ClientErrorEventArgs e)
         {
-            // let's log the name of the guild that was just
-            // sent to our client
+            // let's log the details of the error that just 
+            // occured in our client
             e.Client.DebugLogger.LogMessage(LogLevel.Error, "ExampleBot", $"Exception occured: {e.Exception.GetType()}: {e.Exception.Message}", DateTime.Now);
 
             // since this method is not async, let's return
@@ -181,8 +181,7 @@ namespace DSPlus.Examples
 
         private Task Commands_CommandExecuted(CommandExecutionEventArgs e)
         {
-            // let's log the name of the guild that was just
-            // sent to our client
+            // let's log the name of the command and user
             e.Context.Client.DebugLogger.LogMessage(LogLevel.Info, "ExampleBot", $"{e.Context.User.Username} successfully executed '{e.Command.QualifiedName}'", DateTime.Now);
 
             // since this method is not async, let's return
@@ -193,8 +192,7 @@ namespace DSPlus.Examples
 
         private async Task Commands_CommandErrored(CommandErrorEventArgs e)
         {
-            // let's log the name of the guild that was just
-            // sent to our client
+            // let's log the error details
             e.Context.Client.DebugLogger.LogMessage(LogLevel.Error, "ExampleBot", $"{e.Context.User.Username} tried executing '{e.Command?.QualifiedName ?? "<unknown command>"}' but it errored: {e.Exception.GetType()}: {e.Exception.Message ?? "<no message>"}", DateTime.Now);
 
             // let's check if the error is a result of lack

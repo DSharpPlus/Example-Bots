@@ -1,4 +1,27 @@
-﻿using System;
+﻿// THIS FILE IS A PART OF EMZI0767'S BOT EXAMPLES
+//
+// --------
+// 
+// Copyright 2017 Emzi0767
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//  http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// --------
+//
+// This is an interactivity example. It shows how to properly utilize 
+// Interactivity module.
+
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
@@ -34,7 +57,7 @@ namespace DSPlus.Examples
 
             // get member's voice state
             var vstat = ctx.Member?.VoiceState;
-            if ((vstat == null || vstat.Channel == null) && chn == null)
+            if (vstat?.Channel == null && chn == null)
             {
                 // they did not specify a channel and are not in one
                 await ctx.RespondAsync("You are not in a voice channel.");
@@ -47,7 +70,6 @@ namespace DSPlus.Examples
 
             // connect
             vnc = await vnext.ConnectAsync(chn);
-
             await ctx.RespondAsync($"Connected to `{chn.Name}`");
         }
 
@@ -63,19 +85,18 @@ namespace DSPlus.Examples
                 return;
             }
 
-            // check whether we aren't already connected
+            // check whether we are connected
             var vnc = vnext.GetConnection(ctx.Guild);
             if (vnc == null)
             {
-                // already connected
+                // not connected
                 await ctx.RespondAsync("Not connected in this guild.");
                 return;
             }
 
             // disconnect
             vnc.Disconnect();
-
-            await ctx.RespondAsync($"Disconnected");
+            await ctx.RespondAsync("Disconnected");
         }
 
         [Command("play"), Description("Plays an audio file.")]
@@ -99,8 +120,10 @@ namespace DSPlus.Examples
                 return;
             }
 
+            // check if file exists
             if (!File.Exists(filename))
             {
+                // file does not exist
                 await ctx.RespondAsync($"File `{filename}` does not exist.");
                 return;
             }
@@ -109,6 +132,7 @@ namespace DSPlus.Examples
             while (vnc.IsPlaying)
                 await vnc.WaitForPlaybackFinishAsync();
 
+            // play
             Exception exc = null;
             await ctx.Message.RespondAsync($"Playing `{filename}`");
             await vnc.SendSpeakingAsync(true);
@@ -128,7 +152,7 @@ namespace DSPlus.Examples
                 var ffmpeg = Process.Start(ffmpeg_inf);
                 var ffout = ffmpeg.StandardOutput.BaseStream;
 
-                // lets buffer ffmpeg output
+                // let's buffer ffmpeg output
                 using (var ms = new MemoryStream())
                 {
                     await ffout.CopyToAsync(ms);

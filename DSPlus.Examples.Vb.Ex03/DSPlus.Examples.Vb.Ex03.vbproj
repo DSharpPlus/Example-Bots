@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="DSharpPlus" Version="3.2.1" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="3.2.1" />
+    <PackageReference Include="DSharpPlus.Interactivity" Version="3.2.1" />
   </ItemGroup>
 
 </Project>

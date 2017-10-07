@@ -1,4 +1,27 @@
-﻿using System;
+﻿// THIS FILE IS A PART OF EMZI0767'S BOT EXAMPLES
+//
+// --------
+// 
+// Copyright 2017 Emzi0767
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//  http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// --------
+//
+// This is an interactivity example. It shows how to properly utilize 
+// Interactivity module.
+
+using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
@@ -26,18 +49,15 @@ namespace DSPlus.Examples
                 Title = "Poll time!",
                 Description = string.Join(" ", poll_options)
             };
-            var msg = await ctx.RespondAsync("", embed: embed);
+            var msg = await ctx.RespondAsync(embed: embed);
 
             // add the options as reactions
             for (var i = 0; i < options.Length; i++)
-            {
                 await msg.CreateReactionAsync(options[i]);
-                await Task.Delay(250);
-            }
 
             // collect and filter responses
             var poll_result = await interactivity.CollectReactionsAsync(msg, duration);
-            var results = poll_result.Reactions.Where(xkvp => poll_options.Contains(xkvp.Key.ToString()))
+            var results = poll_result.Reactions.Where(xkvp => options.Contains(xkvp.Key))
                 .Select(xkvp => $"{xkvp.Key}: {xkvp.Value}");
 
             // and finally post the results
@@ -62,7 +82,6 @@ namespace DSPlus.Examples
 
             // wait for anyone who types it
             var msg = await interactivity.WaitForMessageAsync(xm => xm.Content.Contains(code), TimeSpan.FromSeconds(60));
-
             if (msg != null)
             {
                 // announce the winner
@@ -87,8 +106,7 @@ namespace DSPlus.Examples
             await ctx.RespondAsync($"React with {emoji} to quote a message!");
 
             // wait for a reaction
-            var em = await interactivity.WaitForReactionAsync(xe => xe.Id == 0 && xe.Name == emoji.Name, ctx.User, TimeSpan.FromSeconds(60));
-
+            var em = await interactivity.WaitForReactionAsync(xe => xe == emoji, ctx.User, TimeSpan.FromSeconds(60));
             if (em != null)
             {
                 // quote
@@ -99,10 +117,10 @@ namespace DSPlus.Examples
                     Author = new DiscordEmbedBuilder.EmbedAuthor
                     {
                         Name = em.Message.Author is DiscordMember mx ? mx.DisplayName : em.Message.Author.Username,
-                        Url = em.Message.Author.AvatarUrl
+                        IconUrl = em.Message.Author.AvatarUrl
                     }
                 };
-                await ctx.RespondAsync("", embed: embed);
+                await ctx.RespondAsync(embed: embed);
             }
             else
             {
@@ -118,7 +136,6 @@ namespace DSPlus.Examples
 
             // then wait for author's typing
             var chn = await interactivity.WaitForTypingChannelAsync(ctx.User, TimeSpan.FromSeconds(60));
-
             if (chn != null)
             {
                 // got 'em

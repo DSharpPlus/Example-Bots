@@ -95,7 +95,7 @@ namespace DSPlus.Examples
             this.Client.GuildAvailable += this.Client_GuildAvailable;
             this.Client.ClientErrored += this.Client_ClientError;
 
-            // finnaly, let's connect and log in
+            // finally, let's connect and log in
             await this.Client.ConnectAsync();
 
             // and this is to prevent premature quitting
@@ -127,8 +127,8 @@ namespace DSPlus.Examples
 
         private Task Client_ClientError(ClientErrorEventArgs e)
         {
-            // let's log the name of the guild that was just
-            // sent to our client
+            // let's log the details of the error that just 
+            // occured in our client
             e.Client.DebugLogger.LogMessage(LogLevel.Error, "ExampleBot", $"Exception occured: {e.Exception.GetType()}: {e.Exception.Message}", DateTime.Now);
 
             // since this method is not async, let's return

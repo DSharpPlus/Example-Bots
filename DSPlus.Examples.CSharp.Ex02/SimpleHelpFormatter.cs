@@ -1,4 +1,27 @@
-﻿using System.Collections.Generic;
+﻿// THIS FILE IS A PART OF EMZI0767'S BOT EXAMPLES
+//
+// --------
+// 
+// Copyright 2017 Emzi0767
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//  http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// --------
+//
+// This is an interactivity example. It shows how to properly utilize 
+// Interactivity module.
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DSharpPlus;
@@ -71,7 +94,7 @@ namespace DSPlus.Examples
         public IHelpFormatter WithArguments(IEnumerable<CommandArgument> arguments)
         {
             this.MessageBuilder.Append("Arguments: ")
-                .AppendLine(string.Join(", ", arguments.Select(xarg => $"{xarg.Name} ({CommandsNextUtilities.ToUserFriendlyName(xarg.Type)})")))
+                .AppendLine(string.Join(", ", arguments.Select(xarg => $"{xarg.Name} ({xarg.Type.ToUserFriendlyName()})")))
                 .AppendLine();
 
             return this;
