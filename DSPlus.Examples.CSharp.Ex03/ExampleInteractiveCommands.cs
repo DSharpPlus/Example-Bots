@@ -9,6 +9,8 @@ using DSharpPlus.Interactivity;
 
 namespace DSPlus.Examples
 {
+    // note that in here we explicitly ask for duration. This is optional,
+    // since we set the defaults.
     public class ExampleInteractiveCommands
     {
         [Command("poll"), Description("Run a poll with reactions.")]

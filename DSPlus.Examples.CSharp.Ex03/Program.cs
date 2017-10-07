@@ -101,8 +101,18 @@ namespace DSPlus.Examples
             this.Client.GuildAvailable += this.Client_GuildAvailable;
             this.Client.ClientErrored += this.Client_ClientError;
 
-            // let's enable interactivity
-            this.Client.UseInteractivity();
+            // let's enable interactivity, and set default options
+            this.Client.UseInteractivity(new InteractivityConfiguration
+            {
+                // default pagination behaviour to just ignore the reactions
+                PaginationBehaviour = TimeoutBehaviour.Ignore,
+
+                // default pagination timeout to 5 minutes
+                PaginationTimeout = TimeSpan.FromMinutes(5),
+
+                // default timeout for other actions to 2 minutes
+                Timeout = TimeSpan.FromMinutes(2)
+            });
 
             // up next, let's set up our commands
             var ccfg = new CommandsNextConfiguration
