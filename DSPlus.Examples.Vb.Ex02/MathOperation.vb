@@ -18,8 +18,8 @@
 '
 ' --------
 '
-' This is a basic example. It shows how to set up a project and connect to 
-' Discord, as well as perform some simple tasks.
+' This is a commands example. It shows how to properly utilize 
+' CommandsNext, as well as use its advanced functionality.
 
 Option Strict On
 

@@ -11,13 +11,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSPlus.Examples.CSharp.Ex03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSPlus.Examples.CSharp.Ex04", "DSPlus.Examples.CSharp.Ex04\DSPlus.Examples.CSharp.Ex04.csproj", "{976B9057-59C4-4FE3-8CC1-E6096176ED39}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex01", "DSPlus.Examples.Vb.Ex01\DSPlus.Examples.Vb.Ex01.vbproj", "{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex01", "DSPlus.Examples.Vb.Ex01\DSPlus.Examples.Vb.Ex01.vbproj", "{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex02", "DSPlus.Examples.Vb.Ex02\DSPlus.Examples.Vb.Ex02.vbproj", "{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex02", "DSPlus.Examples.Vb.Ex02\DSPlus.Examples.Vb.Ex02.vbproj", "{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex03", "DSPlus.Examples.Vb.Ex03\DSPlus.Examples.Vb.Ex03.vbproj", "{28B208B3-2578-4514-859E-4FFFF6B944D7}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex03", "DSPlus.Examples.Vb.Ex03\DSPlus.Examples.Vb.Ex03.vbproj", "{28B208B3-2578-4514-859E-4FFFF6B944D7}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex04", "DSPlus.Examples.Vb.Ex04\DSPlus.Examples.Vb.Ex04.vbproj", "{E859F561-9D87-4EEF-B13D-7A43D74CCB84}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex04", "DSPlus.Examples.Vb.Ex04\DSPlus.Examples.Vb.Ex04.vbproj", "{E859F561-9D87-4EEF-B13D-7A43D74CCB84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex05", "DSPlus.Examples.CSharp.Ex05\DSPlus.Examples.CSharp.Ex05.csproj", "{D8A91E21-E237-423F-A89C-0C686039419A}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex05", "DSPlus.Examples.Vb.Ex05\DSPlus.Examples.Vb.Ex05.vbproj", "{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8A91E21-E237-423F-A89C-0C686039419A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8A91E21-E237-423F-A89C-0C686039419A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8A91E21-E237-423F-A89C-0C686039419A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8A91E21-E237-423F-A89C-0C686039419A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,8 +18,8 @@
 //
 // --------
 //
-// This is an interactivity example. It shows how to properly utilize 
-// Interactivity module.
+// This is a commands example. It shows how to properly utilize 
+// CommandsNext, as well as use its advanced functionality.
 
 using System.Collections.Generic;
 using System.Linq;

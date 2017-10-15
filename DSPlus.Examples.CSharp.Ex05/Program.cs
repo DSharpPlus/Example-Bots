@@ -18,17 +18,24 @@
 //
 // --------
 //
-// This is a commands example. It shows how to properly utilize 
-// CommandsNext, as well as use its advanced functionality.
+// This is a WinForms example. It shows how to use WinForms without deadlocks.
+
+using System;
+using System.Windows.Forms;
 
 namespace DSPlus.Examples
 {
-    public enum MathOperation
+    static class Program
     {
-        Add,
-        Subtract,
-        Multiply,
-        Divide,
-        Modulo
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormBot());
+        }
     }
 }

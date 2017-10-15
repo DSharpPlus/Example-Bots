@@ -18,8 +18,7 @@
 //
 // --------
 //
-// This is an interactivity example. It shows how to properly utilize 
-// Interactivity module.
+// This is a voice example. It shows how to properly utilize VoiceNext.
 
 using System;
 using System.Diagnostics;

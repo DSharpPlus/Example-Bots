@@ -18,8 +18,8 @@
 '
 ' --------
 '
-' This is a basic example. It shows how to set up a project and connect to 
-' Discord, as well as perform some simple tasks.
+' This is an interactivity example. It shows how to properly utilize 
+' Interactivity module.
 
 Option Strict On
 Imports System.IO
