@@ -8,6 +8,8 @@ They are basic bots which are meant to introduce you to various aspects of the D
 * **Example 2**: Introduces CommandsNext. This bot also responds to several commands, as well as presents several CNext concepts and examples of use.
 * **Example 3**: Introduces Interactivity. This bot has several commands that interact with the user in different ways. Presented are several examples of use.
 * **Example 4**: Introduces VoiceNext. This bot has the ability to connect to voice channels and play music in them. Presented is a simple bot that broadcasts audio from specified file in a queued manner.
+* **Example 5**: Demonstrates a bot with a Windows Forms UI. Presented is a way to run a bot without deadlocking the entire application, as well as properly dispatching the events to the UI.
+* **Example 6**: Demonstrates a bot with a Windows Presentation Foundation (WPF) UI. Presented is a way to run a bot without deadlocking the entire application, as well as properly dispatching the events to the UI.
 
 ## Requirements
 These projects were made using Visual Studio 2017, and they target .NET Core 2.0. You will need one of the following to open and build the projects:
