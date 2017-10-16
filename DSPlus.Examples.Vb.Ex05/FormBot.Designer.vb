@@ -171,6 +171,8 @@ Partial Class FormBot
         Me.Controls.Add(Me.gbChannels)
         Me.Controls.Add(Me.tbToken)
         Me.Controls.Add(Me.btBotctl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "FormBot"
         Me.Text = "Example WinForms Bot"
         Me.gbGuilds.ResumeLayout(False)

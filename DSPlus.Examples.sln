@@ -28,8 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		config.json = config.json
 		LICENSE.txt = LICENSE.txt
 		NOTICE.txt = NOTICE.txt
-		Readme.md = Readme.md
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex06", "DSPlus.Examples.CSharp.Ex06\DSPlus.Examples.CSharp.Ex06.csproj", "{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

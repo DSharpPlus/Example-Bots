@@ -55,12 +55,12 @@ namespace DSPlus.Examples
             this.lbChannels = new System.Windows.Forms.ListBox();
             this.gbChannels = new System.Windows.Forms.GroupBox();
             this.gbBanter = new System.Windows.Forms.GroupBox();
+            this.lbBanter = new System.Windows.Forms.ListBox();
+            this.btMsgSend = new System.Windows.Forms.Button();
+            this.tbMsg = new System.Windows.Forms.TextBox();
             this.btBotctl = new System.Windows.Forms.Button();
             this.tbToken = new System.Windows.Forms.TextBox();
             this.lbToken = new System.Windows.Forms.Label();
-            this.tbMsg = new System.Windows.Forms.TextBox();
-            this.btMsgSend = new System.Windows.Forms.Button();
-            this.lbBanter = new System.Windows.Forms.ListBox();
             this.gbGuilds.SuspendLayout();
             this.gbChannels.SuspendLayout();
             this.gbBanter.SuspendLayout();
@@ -116,6 +116,34 @@ namespace DSPlus.Examples
             this.gbBanter.TabStop = false;
             this.gbBanter.Text = "🅱anter box";
             // 
+            // lbBanter
+            // 
+            this.lbBanter.FormattingEnabled = true;
+            this.lbBanter.Location = new System.Drawing.Point(6, 19);
+            this.lbBanter.Name = "lbBanter";
+            this.lbBanter.Size = new System.Drawing.Size(480, 238);
+            this.lbBanter.TabIndex = 2;
+            // 
+            // btMsgSend
+            // 
+            this.btMsgSend.Enabled = false;
+            this.btMsgSend.Location = new System.Drawing.Point(411, 261);
+            this.btMsgSend.Name = "btMsgSend";
+            this.btMsgSend.Size = new System.Drawing.Size(75, 23);
+            this.btMsgSend.TabIndex = 1;
+            this.btMsgSend.Text = "Send";
+            this.btMsgSend.UseVisualStyleBackColor = true;
+            this.btMsgSend.Click += new System.EventHandler(this.btMsgSend_Click);
+            // 
+            // tbMsg
+            // 
+            this.tbMsg.Enabled = false;
+            this.tbMsg.Location = new System.Drawing.Point(6, 263);
+            this.tbMsg.Name = "tbMsg";
+            this.tbMsg.Size = new System.Drawing.Size(399, 20);
+            this.tbMsg.TabIndex = 0;
+            this.tbMsg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMsg_KeyPress);
+            // 
             // btBotctl
             // 
             this.btBotctl.Location = new System.Drawing.Point(791, 12);
@@ -143,35 +171,7 @@ namespace DSPlus.Examples
             this.lbToken.TabIndex = 5;
             this.lbToken.Text = "Token:";
             // 
-            // tbMsg
-            // 
-            this.tbMsg.Enabled = false;
-            this.tbMsg.Location = new System.Drawing.Point(6, 263);
-            this.tbMsg.Name = "tbMsg";
-            this.tbMsg.Size = new System.Drawing.Size(399, 20);
-            this.tbMsg.TabIndex = 0;
-            this.tbMsg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMsg_KeyPress);
-            // 
-            // btMsgSend
-            // 
-            this.btMsgSend.Enabled = false;
-            this.btMsgSend.Location = new System.Drawing.Point(411, 261);
-            this.btMsgSend.Name = "btMsgSend";
-            this.btMsgSend.Size = new System.Drawing.Size(75, 23);
-            this.btMsgSend.TabIndex = 1;
-            this.btMsgSend.Text = "Send";
-            this.btMsgSend.UseVisualStyleBackColor = true;
-            this.btMsgSend.Click += new System.EventHandler(this.btMsgSend_Click);
-            // 
-            // lbBanter
-            // 
-            this.lbBanter.FormattingEnabled = true;
-            this.lbBanter.Location = new System.Drawing.Point(6, 19);
-            this.lbBanter.Name = "lbBanter";
-            this.lbBanter.Size = new System.Drawing.Size(480, 238);
-            this.lbBanter.TabIndex = 2;
-            // 
-            // Form1
+            // FormBot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,7 +182,9 @@ namespace DSPlus.Examples
             this.Controls.Add(this.gbBanter);
             this.Controls.Add(this.gbChannels);
             this.Controls.Add(this.gbGuilds);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "FormBot";
             this.Text = "Example WinForms Bot";
             this.gbGuilds.ResumeLayout(false);
             this.gbChannels.ResumeLayout(false);
