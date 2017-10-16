@@ -41,10 +41,10 @@ namespace DSPlus.Examples
         // this property controls the title of this window
         public string WindowTitle
         {
-            get => this._title;
-            set { this._title = value; this.OnPropertyChanged(nameof(this.WindowTitle)); }
+            get => this._window_title;
+            set { this._window_title = value; this.OnPropertyChanged(nameof(this.WindowTitle)); }
         }
-        private string _title;
+        private string _window_title;
 
         // this property will hold the text on the bot start/stop button
         public string ControlButtonText
@@ -91,9 +91,9 @@ namespace DSPlus.Examples
                 this.Channels.Clear();
                 this.Banter.Clear();
                 
-                if (this.SelectedGuild.Guild != null)
+                if (this._selected_guild.Guild != null)
                 {
-                    var chns = this.SelectedGuild.Guild.Channels
+                    var chns = this._selected_guild.Guild.Channels
                         .Where(xc => xc.Type == ChannelType.Text)
                         .OrderBy(xc => xc.Position)
                         .Select(xc => new BotChannel(xc));
@@ -135,14 +135,14 @@ namespace DSPlus.Examples
 
         public MainWindow()
         {
-            this._title = "Example WPF Bot";      // set the initial title
-            this._ctl_btn_text = "Start the bot"; // set the initial button text
-            this._next_message = "";              // set the initial message
-            this._enable_ui = true;               // enable the UI
+            this._window_title = "Example WPF Bot"; // set the initial title
+            this._ctl_btn_text = "Start the bot";   // set the initial button text
+            this._next_message = "";                // set the initial message
+            this._enable_ui = true;                 // enable the UI
 
             this.Guilds = new ObservableCollection<BotGuild>();     // initialize the guild collection
             this.Channels = new ObservableCollection<BotChannel>(); // initialize the channel collection
-            this.Banter = new ObservableCollection<BotMessage>(); // initialize the message collection
+            this.Banter = new ObservableCollection<BotMessage>();   // initialize the message collection
 
             InitializeComponent();
         }
@@ -368,6 +368,7 @@ namespace DSPlus.Examples
             this.lbBanter.ScrollIntoView(msg);
         }
 
+        // this is to call the PropertyChanged event
         private void OnPropertyChanged(params string[] props)
         {
             if (this.PropertyChanged != null)
@@ -375,6 +376,7 @@ namespace DSPlus.Examples
                     this.PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
+        // this will notify the UI about changes
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

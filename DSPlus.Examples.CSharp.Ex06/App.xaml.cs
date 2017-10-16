@@ -22,7 +22,7 @@
 
 using System.Windows;
 
-namespace DSPlus.Examples.CSharp.Ex06
+namespace DSPlus.Examples
 {
     /// <summary>
     /// Interaction logic for App.xaml

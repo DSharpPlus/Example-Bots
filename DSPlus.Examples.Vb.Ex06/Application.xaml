@@ -22,12 +22,12 @@
 	This is a WPF example. It shows how to use WPF without deadlocks.
 -->
     
-<Application x:Class="DSPlus.Examples.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:DSPlus.Examples"
-             StartupUri="MainWindow.xaml">
+<Application x:Class="Application"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:DSPlus.Examples"
+    StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>
