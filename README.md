@@ -63,7 +63,7 @@ You can find the documentation for DSharpPlus [over here](https://dsharpplus.emz
 If you want to get more help, join the unofficial [Discord API server](https://discord.gg/discord-api), and look for **#dotnet_dsharpplus** channel.
 
 ## Also check out
-* [Naamloos' example bot](https://github.com/NaamloosDT/DSharpPlus-example)
-* [DSharpPlus source on GitHub](https://github.com/NaamloosDT/DSharpPlus)
+* [Naamloos' example bot](https://github.com/DSharpPlus/DSharpPlus-example)
+* [DSharpPlus source on GitHub](https://github.com/DSharpPlus/DSharpPlus)
 * [DSharpPlus Discord server](https://discord.gg/KeAS3pU)
-* [#dotnet_dsharpplus on Discord API server](https://discord.gg/N4WeVd)
+* [#dotnet_dsharpplus on Discord API server](https://discord.gg/discord-api)
