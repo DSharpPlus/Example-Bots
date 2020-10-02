@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.EventArgs;
+using Microsoft.Extensions.Logging;
 
 namespace DSPlus.Examples
 {
@@ -45,15 +46,11 @@ namespace DSPlus.Examples
                 TokenType = TokenType.Bot,       // log in as a bot
 
                 AutoReconnect = true,            // reconnect automatically
-                LogLevel = LogLevel.Debug,       // log everything
-                UseInternalLogHandler = false    // we don't want the internal output logger
+                MinimumLogLevel = LogLevel.Debug,
             };
 
             // initialize the client
             this.Client = new DiscordClient(cfg);
-
-            // attach our own debug logger
-            this.Client.DebugLogger.LogMessageReceived += this.DebugLogger_LogMessageReceived;
         }
 
         // this method logs in and starts the client
@@ -63,9 +60,5 @@ namespace DSPlus.Examples
         // this method logs out and stops the client
         public Task StopAsync()
             => this.Client.DisconnectAsync();
-
-        // this method writes all of bot's log messages to debug output
-        private void DebugLogger_LogMessageReceived(object sender, DebugLogMessageEventArgs e)
-            => Debug.WriteLine($"[{e.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")}] [{e.Application}] [{e.Level}] {e.Message}");
     }
 }

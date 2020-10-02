@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSPlus.Examples.CSharp.Ex01", "DSPlus.Examples.CSharp.Ex01\DSPlus.Examples.CSharp.Ex01.csproj", "{DFCFF093-5B28-4CD8-BF3E-433F41B7DEF9}"
 EndProject
@@ -11,29 +11,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSPlus.Examples.CSharp.Ex03
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSPlus.Examples.CSharp.Ex04", "DSPlus.Examples.CSharp.Ex04\DSPlus.Examples.CSharp.Ex04.csproj", "{976B9057-59C4-4FE3-8CC1-E6096176ED39}"
 EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex01", "DSPlus.Examples.Vb.Ex01\DSPlus.Examples.Vb.Ex01.vbproj", "{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}"
-EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex02", "DSPlus.Examples.Vb.Ex02\DSPlus.Examples.Vb.Ex02.vbproj", "{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}"
-EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex03", "DSPlus.Examples.Vb.Ex03\DSPlus.Examples.Vb.Ex03.vbproj", "{28B208B3-2578-4514-859E-4FFFF6B944D7}"
-EndProject
-Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "DSPlus.Examples.Vb.Ex04", "DSPlus.Examples.Vb.Ex04\DSPlus.Examples.Vb.Ex04.vbproj", "{E859F561-9D87-4EEF-B13D-7A43D74CCB84}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex05", "DSPlus.Examples.CSharp.Ex05\DSPlus.Examples.CSharp.Ex05.csproj", "{D8A91E21-E237-423F-A89C-0C686039419A}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex05", "DSPlus.Examples.Vb.Ex05\DSPlus.Examples.Vb.Ex05.vbproj", "{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44804B52-D012-41BC-9285-10020CA43546}"
 	ProjectSection(SolutionItems) = preProject
 		config.json = config.json
 		LICENSE.txt = LICENSE.txt
 		NOTICE.txt = NOTICE.txt
+		NuGet.config = NuGet.config
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPlus.Examples.CSharp.Ex06", "DSPlus.Examples.CSharp.Ex06\DSPlus.Examples.CSharp.Ex06.csproj", "{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DSPlus.Examples.Vb.Ex06", "DSPlus.Examples.Vb.Ex06\DSPlus.Examples.Vb.Ex06.vbproj", "{CD67A16F-3EC3-4112-B1A8-DDB38C0B4748}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,38 +46,14 @@ Global
 		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{976B9057-59C4-4FE3-8CC1-E6096176ED39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFF7DE2E-B1D6-45CA-904F-C6A7D3579106}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7E771E4-5366-4382-9EFE-9261C0F4F4BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{28B208B3-2578-4514-859E-4FFFF6B944D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28B208B3-2578-4514-859E-4FFFF6B944D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28B208B3-2578-4514-859E-4FFFF6B944D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28B208B3-2578-4514-859E-4FFFF6B944D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E859F561-9D87-4EEF-B13D-7A43D74CCB84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8A91E21-E237-423F-A89C-0C686039419A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8A91E21-E237-423F-A89C-0C686039419A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8A91E21-E237-423F-A89C-0C686039419A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8A91E21-E237-423F-A89C-0C686039419A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73343BF8-BD70-4D75-90E6-1B319ACC6C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1156237D-8E5D-41B4-8E34-2C6D5BD6940B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD67A16F-3EC3-4112-B1A8-DDB38C0B4748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD67A16F-3EC3-4112-B1A8-DDB38C0B4748}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD67A16F-3EC3-4112-B1A8-DDB38C0B4748}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD67A16F-3EC3-4112-B1A8-DDB38C0B4748}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

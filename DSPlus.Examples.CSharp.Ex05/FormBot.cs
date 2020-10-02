@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ namespace DSPlus.Examples
             this.lbBanter.Items.Clear();
 
             // populate the channel list
-            var chns = bg.Guild.Channels
+            var chns = bg.Guild.Channels.Values
                 .Where(xc => xc.Type == ChannelType.Text)
                 .OrderBy(xc => xc.Position)
                 .Select(xc => new BotChannel(xc));
@@ -240,7 +240,7 @@ namespace DSPlus.Examples
             => chn.Channel.SendMessageAsync(text);
 
         // this handles the bot's ready event
-        private Task Bot_Ready(ReadyEventArgs e)
+        private Task Bot_Ready(DiscordClient sender, ReadyEventArgs e)
         {
             // set the window title to indicate we are connected
             this.SetProperty(xf => xf.Text, "Example WinForms Bot (connected)");
@@ -248,7 +248,7 @@ namespace DSPlus.Examples
         }
 
         // called when any of the bot's guilds becomes available
-        private Task Bot_GuildAvailable(GuildCreateEventArgs e)
+        private Task Bot_GuildAvailable(DiscordClient sender, GuildCreateEventArgs e)
         {
             // add the guild to the bot's guild collection
             this.lbGuilds.InvokeAction(new Action<BotGuild>(this.AddGuild), new BotGuild(e.Guild));
@@ -256,7 +256,7 @@ namespace DSPlus.Examples
         }
 
         // called when any of the bot joins a guild
-        private Task Bot_GuildCreated(GuildCreateEventArgs e)
+        private Task Bot_GuildCreated(DiscordClient sender, GuildCreateEventArgs e)
         {
             // add the guild to the bot's guild collection
             this.lbGuilds.InvokeAction(new Action<BotGuild>(this.AddGuild), new BotGuild(e.Guild));
@@ -264,7 +264,7 @@ namespace DSPlus.Examples
         }
 
         // called when any of the bot's guilds becomes unavailable
-        private Task Bot_GuildUnavailable(GuildDeleteEventArgs e)
+        private Task Bot_GuildUnavailable(DiscordClient sender, GuildDeleteEventArgs e)
         {
             // remove the guild from the bot's guild collection
             this.lbGuilds.InvokeAction(new Action<ulong>(this.RemoveGuild), e.Guild.Id);
@@ -272,7 +272,7 @@ namespace DSPlus.Examples
         }
 
         // called when any of the bot leaves a guild
-        private Task Bot_GuildDeleted(GuildDeleteEventArgs e)
+        private Task Bot_GuildDeleted(DiscordClient sender, GuildDeleteEventArgs e)
         {
             // remove the guild from the bot's guild collection
             this.lbGuilds.InvokeAction(new Action<ulong>(this.RemoveGuild), e.Guild.Id);
@@ -280,7 +280,7 @@ namespace DSPlus.Examples
         }
 
         // called when the bot receives a message
-        private Task Bot_MessageCreated(MessageCreateEventArgs e)
+        private Task Bot_MessageCreated(DiscordClient sender, MessageCreateEventArgs e)
         {
             // if this message is not meant for the currently 
             // selected channel, ignore it
@@ -294,7 +294,7 @@ namespace DSPlus.Examples
 
         // called when an unhandled exception occurs in any of the 
         // event handlers
-        private Task Bot_ClientErrored(ClientErrorEventArgs e)
+        private Task Bot_ClientErrored(DiscordClient sender, ClientErrorEventArgs e)
         {
             // show a message box by dispatching it to the UI thread
             this.InvokeAction(new Action(() => MessageBox.Show(this, $"Exception in {e.EventName}: {e.Exception.ToString()}", "Unhandled exception in the bot", MessageBoxButtons.OK, MessageBoxIcon.Warning)));

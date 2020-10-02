@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,40 +21,26 @@
 // This is a commands example. It shows how to properly utilize 
 // CommandsNext, as well as use its advanced functionality.
 
+using System.Threading.Tasks;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Converters;
+using DSharpPlus.Entities;
 
 namespace DSPlus.Examples
 {
     public class MathOperationConverter : IArgumentConverter<MathOperation>
     {
-        public bool TryConvert(string value, CommandContext ctx, out MathOperation result)
+        public Task<Optional<MathOperation>> ConvertAsync(string value, CommandContext ctx)
         {
-            switch (value)
+            return value switch
             {
-                case "+":
-                    result = MathOperation.Add;
-                    return true;
-
-                case "-":
-                    result = MathOperation.Subtract;
-                    return true;
-
-                case "*":
-                    result = MathOperation.Multiply;
-                    return true;
-
-                case "/":
-                    result = MathOperation.Divide;
-                    return true;
-
-                case "%":
-                    result = MathOperation.Modulo;
-                    return true;
-            }
-
-            result = MathOperation.Add;
-            return false;
+                "+" => Task.FromResult(Optional.FromValue(MathOperation.Add)),
+                "-" => Task.FromResult(Optional.FromValue(MathOperation.Subtract)),
+                "*" => Task.FromResult(Optional.FromValue(MathOperation.Multiply)),
+                "/" => Task.FromResult(Optional.FromValue(MathOperation.Divide)),
+                "%" => Task.FromResult(Optional.FromValue(MathOperation.Modulo)),
+                _ => Task.FromResult(Optional.FromValue(MathOperation.Add))
+            };
         }
     }
 }

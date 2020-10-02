@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,15 +31,19 @@ using DSharpPlus.CommandsNext.Exceptions;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
+using DSharpPlus.Interactivity.Enums;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace DSPlus.Examples
 {
     public class Program
     {
+        public readonly EventId BotEventId = new EventId(42, "Bot-Ex03");
+        
         public DiscordClient Client { get; set; }
-        public InteractivityModule Interactivity { get; set; }
-        public CommandsNextModule Commands { get; set; }
+        public InteractivityExtension Interactivity { get; set; }
+        public CommandsNextExtension Commands { get; set; }
 
         public static void Main(string[] args)
         {
@@ -66,8 +70,7 @@ namespace DSPlus.Examples
                 TokenType = TokenType.Bot,
 
                 AutoReconnect = true,
-                LogLevel = LogLevel.Debug,
-                UseInternalLogHandler = true
+                MinimumLogLevel = LogLevel.Debug
             };
 
             // then we want to instantiate our client
@@ -105,10 +108,7 @@ namespace DSPlus.Examples
             this.Client.UseInteractivity(new InteractivityConfiguration
             {
                 // default pagination behaviour to just ignore the reactions
-                PaginationBehaviour = TimeoutBehaviour.Ignore,
-
-                // default pagination timeout to 5 minutes
-                PaginationTimeout = TimeSpan.FromMinutes(5),
+                PaginationBehaviour = PaginationBehaviour.Ignore,
 
                 // default timeout for other actions to 2 minutes
                 Timeout = TimeSpan.FromMinutes(2)
@@ -118,7 +118,7 @@ namespace DSPlus.Examples
             var ccfg = new CommandsNextConfiguration
             {
                 // let's use the string prefix defined in config.json
-                StringPrefix = cfgjson.CommandPrefix,
+                StringPrefixes = new[] { cfgjson.CommandPrefix },
 
                 // enable responding in direct messages
                 EnableDms = true,
@@ -150,22 +150,22 @@ namespace DSPlus.Examples
             await Task.Delay(-1);
         }
 
-        private Task Client_Ready(ReadyEventArgs e)
+        private Task Client_Ready(DiscordClient sender, ReadyEventArgs e)
         {
             // let's log the fact that this event occured
-            e.Client.DebugLogger.LogMessage(LogLevel.Info, "ExampleBot", "Client is ready to process events.", DateTime.Now);
-
+            sender.Logger.LogInformation(BotEventId, "Client is ready to process events.");
+            
             // since this method is not async, let's return
             // a completed task, so that no additional work
             // is done
             return Task.CompletedTask;
         }
 
-        private Task Client_GuildAvailable(GuildCreateEventArgs e)
+        private Task Client_GuildAvailable(DiscordClient sender, GuildCreateEventArgs e)
         {
             // let's log the name of the guild that was just
             // sent to our client
-            e.Client.DebugLogger.LogMessage(LogLevel.Info, "ExampleBot", $"Guild available: {e.Guild.Name}", DateTime.Now);
+            sender.Logger.LogInformation(BotEventId, $"Guild available: {e.Guild.Name}");
 
             // since this method is not async, let's return
             // a completed task, so that no additional work
@@ -173,11 +173,11 @@ namespace DSPlus.Examples
             return Task.CompletedTask;
         }
 
-        private Task Client_ClientError(ClientErrorEventArgs e)
+        private Task Client_ClientError(DiscordClient sender, ClientErrorEventArgs e)
         {
             // let's log the details of the error that just 
             // occured in our client
-            e.Client.DebugLogger.LogMessage(LogLevel.Error, "ExampleBot", $"Exception occured: {e.Exception.GetType()}: {e.Exception.Message}", DateTime.Now);
+            sender.Logger.LogError(BotEventId, e.Exception, "Exception occured");
 
             // since this method is not async, let's return
             // a completed task, so that no additional work
@@ -185,10 +185,10 @@ namespace DSPlus.Examples
             return Task.CompletedTask;
         }
 
-        private Task Commands_CommandExecuted(CommandExecutionEventArgs e)
+        private Task Commands_CommandExecuted(CommandsNextExtension sender, CommandExecutionEventArgs e)
         {
             // let's log the name of the command and user
-            e.Context.Client.DebugLogger.LogMessage(LogLevel.Info, "ExampleBot", $"{e.Context.User.Username} successfully executed '{e.Command.QualifiedName}'", DateTime.Now);
+            e.Context.Client.Logger.LogInformation(BotEventId, $"{e.Context.User.Username} successfully executed '{e.Command.QualifiedName}'");
 
             // since this method is not async, let's return
             // a completed task, so that no additional work
@@ -196,10 +196,10 @@ namespace DSPlus.Examples
             return Task.CompletedTask;
         }
 
-        private async Task Commands_CommandErrored(CommandErrorEventArgs e)
+        private async Task Commands_CommandErrored(CommandsNextExtension sender, CommandErrorEventArgs e)
         {
             // let's log the error details
-            e.Context.Client.DebugLogger.LogMessage(LogLevel.Error, "ExampleBot", $"{e.Context.User.Username} tried executing '{e.Command?.QualifiedName ?? "<unknown command>"}' but it errored: {e.Exception.GetType()}: {e.Exception.Message ?? "<no message>"}", DateTime.Now);
+            e.Context.Client.Logger.LogError(BotEventId, $"{e.Context.User.Username} tried executing '{e.Command?.QualifiedName ?? "<unknown command>"}' but it errored: {e.Exception.GetType()}: {e.Exception.Message ?? "<no message>"}", DateTime.Now);
 
             // let's check if the error is a result of lack
             // of required permissions
