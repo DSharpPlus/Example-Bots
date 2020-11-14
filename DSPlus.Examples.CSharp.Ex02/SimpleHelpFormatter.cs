@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -33,77 +33,54 @@ namespace DSPlus.Examples
 {
     // help formatters can alter the look of default help command,
     // this particular one replaces the embed with a simple text message.
-    public class SimpleHelpFormatter : IHelpFormatter
+    public class SimpleHelpFormatter : BaseHelpFormatter
     {
         private StringBuilder MessageBuilder { get; }
 
-        public SimpleHelpFormatter()
+        public SimpleHelpFormatter(CommandContext ctx) : base(ctx)
         {
             this.MessageBuilder = new StringBuilder();
         }
 
-        // this method is called first, it sets the current command's name
-        // if no command is currently being processed, it won't be called
-        public IHelpFormatter WithCommandName(string name)
+        // this method is called first, it sets the command
+        public override BaseHelpFormatter WithCommand(Command command)
         {
             this.MessageBuilder.Append("Command: ")
-                .AppendLine(Formatter.Bold(name))
-                .AppendLine();
+               .AppendLine(Formatter.Bold(command.Name))
+               .AppendLine();
 
-            return this;
-        }
 
-        // this method is called second, it sets the current command's 
-        // description. if no command is currently being processed, it 
-        // won't be called
-        public IHelpFormatter WithDescription(string description)
-        {
             this.MessageBuilder.Append("Description: ")
-                .AppendLine(description)
+                .AppendLine(command.Description)
                 .AppendLine();
 
-            return this;
-        }
+            if (command is CommandGroup)
+                this.MessageBuilder.AppendLine("This group has a standalone command.").AppendLine();
 
-        // this method is called third, it is used when currently 
-        // processed group can be executed as a standalone command, 
-        // otherwise not called
-        public IHelpFormatter WithGroupExecutable()
-        {
-            this.MessageBuilder.AppendLine("This group is a standalone command.")
-                .AppendLine();
-
-            return this;
-        }
-
-        // this method is called fourth, it sets the current command's 
-        // aliases. if no command is currently being processed, it won't
-        // be called
-        public IHelpFormatter WithAliases(IEnumerable<string> aliases)
-        {
             this.MessageBuilder.Append("Aliases: ")
-                .AppendLine(string.Join(", ", aliases))
+                .AppendLine(string.Join(", ", command.Aliases))
                 .AppendLine();
+
+
+            foreach (var overload in command.Overloads)
+            {
+                if (overload.Arguments.Count == 0)
+                {
+                    continue;
+                }
+
+                this.MessageBuilder.Append($"[Overload {overload.Priority}] Arguments: ")
+                .AppendLine(string.Join(", ", overload.Arguments.Select(xarg => $"{xarg.Name} ({xarg.Type.Name})")))
+                .AppendLine();
+            }
 
             return this;
         }
 
-        // this method is called fifth, it sets the current command's 
-        // arguments. if no command is currently being processed, it won't 
-        // be called
-        public IHelpFormatter WithArguments(IEnumerable<CommandArgument> arguments)
-        {
-            this.MessageBuilder.Append("Arguments: ")
-                .AppendLine(string.Join(", ", arguments.Select(xarg => $"{xarg.Name} ({xarg.Type.ToUserFriendlyName()})")))
-                .AppendLine();
-
-            return this;
-        }
-
-        // this method is called sixth, it sets the current group's subcommands
+        // this method is called second, it sets the current group's subcommands
         // if no group is being processed or current command is not a group, it 
         // won't be called
-        public IHelpFormatter WithSubcommands(IEnumerable<Command> subcommands)
+        public override BaseHelpFormatter WithSubcommands(IEnumerable<Command> subcommands)
         {
             this.MessageBuilder.Append("Subcommands: ")
                 .AppendLine(string.Join(", ", subcommands.Select(xc => xc.Name)))
@@ -114,7 +91,7 @@ namespace DSPlus.Examples
 
         // this is called as the last method, this should produce the final 
         // message, and return it
-        public CommandHelpMessage Build()
+        public override CommandHelpMessage Build()
         {
             return new CommandHelpMessage(this.MessageBuilder.ToString().Replace("\r\n", "\n"));
         }

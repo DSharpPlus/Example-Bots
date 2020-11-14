@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ using DSharpPlus.Entities;
 
 namespace DSPlus.Examples
 {
-    public class ExampleUngrouppedCommands
+    public class ExampleUngrouppedCommands : BaseCommandModule
     {
         [Command("ping")] // let's define this method as a command
         [Description("Example ping command")] // this will be displayed to tell users what this command does when they invoke help
@@ -123,7 +123,7 @@ namespace DSPlus.Examples
     [Description("Administrative commands.")] // give it a description for help purposes
     [Hidden] // let's hide this from the eyes of curious users
     [RequirePermissions(Permissions.ManageGuild)] // and restrict this to users who have appropriate permissions
-    public class ExampleGrouppedCommands
+    public class ExampleGrouppedCommands : BaseCommandModule
     {
         // all the commands will need to be executed as <prefix>admin <command> <arguments>
 
@@ -142,8 +142,14 @@ namespace DSPlus.Examples
             // sudo purposes
             var cmds = ctx.CommandsNext;
 
+            // retrieve the command and its arguments from the given string
+            var cmd = cmds.FindCommand(command, out var customArgs);
+
+            // create a fake CommandContext
+            var fakeContext = cmds.CreateFakeContext(member, ctx.Channel, command, ctx.Prefix, cmd, customArgs);
+
             // and perform the sudo
-            await cmds.SudoAsync(member, ctx.Channel, command);
+            await cmds.ExecuteCommandAsync(fakeContext);
         }
 
         [Command("nick"), Description("Gives someone a new nickname."), RequirePermissions(Permissions.ManageNicknames)]
@@ -157,7 +163,11 @@ namespace DSPlus.Examples
             {
                 // let's change the nickname, and tell the 
                 // audit logs who did it.
-                await member.ModifyAsync(new_nickname, reason: $"Changed by {ctx.User.Username} ({ctx.User.Id}).");
+                await member.ModifyAsync(x =>
+                {
+                    x.Nickname = new_nickname;
+                    x.AuditLogReason = $"Changed by {ctx.User.Username} ({ctx.User.Id}).";
+                });
                 
                 // let's make a simple response.
                 var emoji = DiscordEmoji.FromName(ctx.Client, ":+1:");
@@ -174,18 +184,17 @@ namespace DSPlus.Examples
         }
     }
 
-    [Group("memes", CanInvokeWithoutSubcommand = true)] // this makes the class a group, but with a twist; the class now needs an ExecuteGroupAsync method
+    [Group("memes")]
     [Description("Contains some memes. When invoked without subcommand, returns a random one.")]
     [Aliases("copypasta")]
-    public class ExampleExecutableGroup
+    public class ExampleExecutableGroup : BaseCommandModule
     {
         // commands in this group need to be executed as 
         // <prefix>memes [command] or <prefix>copypasta [command]
 
-        // this is the group's command; unlike with other commands, 
-        // any attributes on this one are ignored, but like other
-        // commands, it can take arguments
-        public async Task ExecuteGroupAsync(CommandContext ctx)
+        // this command is a group command. It means it can be invoked by just typing <prefix>memes
+        [GroupCommand]
+        public async Task RandomMemeAsync(CommandContext ctx)
         {
             // let's give them a random meme
             var rnd = new Random();
@@ -237,10 +246,11 @@ namespace DSPlus.Examples
 
         // this is a subgroup; you can nest groups as much 
         // as you like
-        [Group("mememan", CanInvokeWithoutSubcommand = true), Hidden]
-        public class MemeMan
+        [Group("mememan"), Hidden]
+        public class MemeMan : BaseCommandModule
         {
-            public async Task ExecuteGroupAsync(CommandContext ctx)
+            [GroupCommand]
+            public async Task MemeManAsync(CommandContext ctx)
             {
                 await ctx.TriggerTypingAsync();
 

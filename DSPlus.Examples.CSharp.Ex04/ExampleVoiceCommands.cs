@@ -2,7 +2,7 @@
 //
 // --------
 // 
-// Copyright 2017 Emzi0767
+// Copyright 2019 Emzi0767
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -31,13 +31,13 @@ using DSharpPlus.VoiceNext;
 
 namespace DSPlus.Examples
 {
-    public class ExampleVoiceCommands
+    public class ExampleVoiceCommands : BaseCommandModule
     {
         [Command("join"), Description("Joins a voice channel.")]
         public async Task Join(CommandContext ctx, DiscordChannel chn = null)
         {
             // check whether VNext is enabled
-            var vnext = ctx.Client.GetVoiceNextClient();
+            var vnext = ctx.Client.GetVoiceNext();
             if (vnext == null)
             {
                 // not enabled
@@ -76,7 +76,7 @@ namespace DSPlus.Examples
         public async Task Leave(CommandContext ctx)
         {
             // check whether VNext is enabled
-            var vnext = ctx.Client.GetVoiceNextClient();
+            var vnext = ctx.Client.GetVoiceNext();
             if (vnext == null)
             {
                 // not enabled
@@ -102,7 +102,7 @@ namespace DSPlus.Examples
         public async Task Play(CommandContext ctx, [RemainingText, Description("Full path to the file to play.")] string filename)
         {
             // check whether VNext is enabled
-            var vnext = ctx.Client.GetVoiceNextClient();
+            var vnext = ctx.Client.GetVoiceNext();
             if (vnext == null)
             {
                 // not enabled
@@ -134,45 +134,31 @@ namespace DSPlus.Examples
             // play
             Exception exc = null;
             await ctx.Message.RespondAsync($"Playing `{filename}`");
-            await vnc.SendSpeakingAsync(true);
+            
             try
             {
-                // borrowed from
-                // https://github.com/RogueException/Discord.Net/blob/5ade1e387bb8ea808a9d858328e2d3db23fe0663/docs/guides/voice/samples/audio_create_ffmpeg.cs
+                await vnc.SendSpeakingAsync(true);
 
-                var ffmpeg_inf = new ProcessStartInfo
+                var psi = new ProcessStartInfo
                 {
-                    FileName = "ffmpeg",
-                    Arguments = $"-i \"{filename}\" -ac 2 -f s16le -ar 48000 pipe:1",
-                    UseShellExecute = false,
+                    FileName = "ffmpeg.exe",
+                    Arguments = $@"-i ""{filename}"" -ac 2 -f s16le -ar 48000 pipe:1 -loglevel quiet",
                     RedirectStandardOutput = true,
-                    RedirectStandardError = true
+                    UseShellExecute = false
                 };
-                var ffmpeg = Process.Start(ffmpeg_inf);
+                var ffmpeg = Process.Start(psi);
                 var ffout = ffmpeg.StandardOutput.BaseStream;
 
-                // let's buffer ffmpeg output
-                using (var ms = new MemoryStream())
-                {
-                    await ffout.CopyToAsync(ms);
-                    ms.Position = 0;
-
-                    var buff = new byte[3840]; // buffer to hold the PCM data
-                    var br = 0;
-                    while ((br = ms.Read(buff, 0, buff.Length)) > 0)
-                    {
-                        if (br < buff.Length) // it's possible we got less than expected, let's null the remaining part of the buffer
-                            for (var i = br; i < buff.Length; i++)
-                                buff[i] = 0;
-
-                        await vnc.SendAsync(buff, 20); // we're sending 20ms of data
-                    }
-                }
+                var txStream = vnc.GetTransmitSink();
+                await ffout.CopyToAsync(txStream);
+                await txStream.FlushAsync();
+                await vnc.WaitForPlaybackFinishAsync();
             }
             catch (Exception ex) { exc = ex; }
             finally
             {
                 await vnc.SendSpeakingAsync(false);
+                await ctx.Message.RespondAsync($"Finished playing `{filename}`");
             }
 
             if (exc != null)
