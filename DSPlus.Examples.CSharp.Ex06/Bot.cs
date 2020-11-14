@@ -20,10 +20,8 @@
 //
 // This is a WPF example. It shows how to use WPF without deadlocks.
 
-using System.Diagnostics;
 using System.Threading.Tasks;
 using DSharpPlus;
-using DSharpPlus.EventArgs;
 using Microsoft.Extensions.Logging;
 
 namespace DSPlus.Examples

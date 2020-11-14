@@ -30,7 +30,6 @@ using DSharpPlus.CommandsNext.Exceptions;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.VoiceNext;
-using DSharpPlus.VoiceNext.Codec;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 

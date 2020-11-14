@@ -20,10 +20,8 @@
 //
 // This is a WinForms example. It shows how to use WinForms without deadlocks.
 
-using System.Diagnostics;
 using System.Threading.Tasks;
 using DSharpPlus;
-using DSharpPlus.EventArgs;
 using Microsoft.Extensions.Logging;
 
 namespace DSPlus.Examples

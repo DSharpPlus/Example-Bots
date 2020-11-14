@@ -21,7 +21,6 @@
 // This is a basic example. It shows how to set up a project and connect to 
 // Discord, as well as perform some simple tasks.
 
-using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;

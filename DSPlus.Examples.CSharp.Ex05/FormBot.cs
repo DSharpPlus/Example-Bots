@@ -21,7 +21,6 @@
 // This is a WinForms example. It shows how to use WinForms without deadlocks.
 
 using System;
-using System.Data;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;

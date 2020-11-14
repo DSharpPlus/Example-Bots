@@ -149,7 +149,7 @@ namespace DSPlus.Examples
                 var ffmpeg = Process.Start(psi);
                 var ffout = ffmpeg.StandardOutput.BaseStream;
 
-                var txStream = vnc.GetTransmitStream();
+                var txStream = vnc.GetTransmitSink();
                 await ffout.CopyToAsync(txStream);
                 await txStream.FlushAsync();
                 await vnc.WaitForPlaybackFinishAsync();
