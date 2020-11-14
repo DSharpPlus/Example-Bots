@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DSharpPlus, Version=4.0.0.749, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\DSharpPlus.4.0.0-nightly-00749\lib\netstandard2.0\DSharpPlus.dll</HintPath>
+    <Reference Include="DSharpPlus, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\DSharpPlus.4.0.0-rc1\lib\netstandard2.0\DSharpPlus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Emzi0767.Common, Version=2.2.2.0, Culture=neutral, PublicKeyToken=null">
