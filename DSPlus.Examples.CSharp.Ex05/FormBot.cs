@@ -60,7 +60,7 @@ namespace DSPlus.Examples
 
             // set the UI state
             this.SelectedGuild = bg;
-            this.SelectedChannel = default(BotChannel);
+            this.SelectedChannel = default;
 
             // clear the channel and message lists
             this.lbChannels.ClearSelected();
@@ -224,8 +224,8 @@ namespace DSPlus.Examples
             this.lbBanter.InvokeAction(new Action(this.lbBanter.Items.Clear));
 
             // and reset the UI state
-            this.SelectedGuild = default(BotGuild);
-            this.SelectedChannel = default(BotChannel);
+            this.SelectedGuild = default;
+            this.SelectedChannel = default;
 
             // and finally, dispose of our bot stuff
             this.Bot = null;

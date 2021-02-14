@@ -49,7 +49,7 @@ namespace DSPlus.Examples
                 Title = "Poll time!",
                 Description = string.Join(" ", poll_options)
             };
-            var msg = await ctx.RespondAsync(embed: embed);
+            var msg = await ctx.RespondAsync(embed);
 
             // add the options as reactions
             for (var i = 0; i < options.Length; i++)
@@ -120,7 +120,7 @@ namespace DSPlus.Examples
                         IconUrl = em.Result.User.AvatarUrl
                     }
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
             else
             {
