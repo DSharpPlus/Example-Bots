@@ -86,8 +86,8 @@ namespace DSPlus.Examples
             set
             {
                 this._selected_guild = value;
-                this._selected_channel = default(BotChannel);
-                this._selected_message = default(BotMessage);
+                this._selected_channel = default;
+                this._selected_message = default;
                 this.Channels.Clear();
                 this.Banter.Clear();
                 
@@ -112,7 +112,7 @@ namespace DSPlus.Examples
             set
             {
                 this._selected_channel = value;
-                this._selected_message = default(BotMessage);
+                this._selected_message = default;
                 this.Banter.Clear();
                 this.OnPropertyChanged(nameof(this.SelectedChannel), nameof(this.SelectedMessage));
             }
@@ -272,8 +272,8 @@ namespace DSPlus.Examples
             this.SetProperty(x => x.WindowTitle, "Example WPF Bot");
 
             // and reset the UI state
-            this.SetProperty(x => x.SelectedGuild, default(BotGuild));
-            this.SetProperty(x => x.SelectedChannel, default(BotChannel));
+            this.SetProperty(x => x.SelectedGuild, default);
+            this.SetProperty(x => x.SelectedChannel, default);
             this.InvokeAction(new Action(this.Guilds.Clear));
 
             // and finally, dispose of our bot stuff

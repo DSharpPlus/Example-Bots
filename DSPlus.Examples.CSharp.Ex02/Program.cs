@@ -192,7 +192,7 @@ namespace DSPlus.Examples
                     Description = $"{emoji} You do not have the permissions required to execute this command.",
                     Color = new DiscordColor(0xFF0000) // red
                 };
-                await e.Context.RespondAsync("", embed: embed);
+                await e.Context.RespondAsync(embed);
             }
         }
     }

@@ -77,28 +77,6 @@ namespace DSPlus.Examples
             // then we want to instantiate our client
             this.Client = new DiscordClient(cfg);
 
-            // If you are on Windows 7 and using .NETFX, install 
-            // DSharpPlus.WebSocket.WebSocket4Net from NuGet,
-            // add appropriate usings, and uncomment the following
-            // line
-            //this.Client.SetWebSocketClient<WebSocket4NetClient>();
-
-            // If you are on Windows 7 and using .NET Core, install 
-            // DSharpPlus.WebSocket.WebSocket4NetCore from NuGet,
-            // add appropriate usings, and uncomment the following
-            // line
-            //this.Client.SetWebSocketClient<WebSocket4NetCoreClient>();
-
-            // If you are using Mono, install 
-            // DSharpPlus.WebSocket.WebSocketSharp from NuGet,
-            // add appropriate usings, and uncomment the following
-            // line
-            //this.Client.SetWebSocketClient<WebSocketSharpClient>();
-
-            // if using any alternate socket client implementations, 
-            // remember to add the following to the top of this file:
-            //using DSharpPlus.Net.WebSocket;
-
             // next, let's hook some events, so we know
             // what's going on
             this.Client.Ready += this.Client_Ready;
@@ -218,7 +196,7 @@ namespace DSPlus.Examples
                     Description = $"{emoji} You do not have the permissions required to execute this command.",
                     Color = new DiscordColor(0xFF0000) // red
                 };
-                await e.Context.RespondAsync("", embed: embed);
+                await e.Context.RespondAsync(embed);
             }
         }
     }

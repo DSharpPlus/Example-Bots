@@ -227,7 +227,7 @@ namespace DSPlus.Examples
                 Title = "Pepe",
                 ImageUrl = "http://i.imgur.com/44SoSqS.jpg"
             };
-            await ctx.RespondAsync(embed: embed);
+            await ctx.RespondAsync(embed);
         }
 
         [Command("navyseal"), Aliases("gorillawarfare"), Description("What the fuck did you just say to me?")]
@@ -260,7 +260,7 @@ namespace DSPlus.Examples
                     Title = "Meme man",
                     ImageUrl = "http://i.imgur.com/tEmKtNt.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("ukip"), Description("The UKIP pledge.")]
@@ -274,7 +274,7 @@ namespace DSPlus.Examples
                     Title = "UKIP pledge",
                     ImageUrl = "http://i.imgur.com/ql76fCQ.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("lineofsight"), Description("Line of sight.")]
@@ -288,7 +288,7 @@ namespace DSPlus.Examples
                     Title = "Line of sight",
                     ImageUrl = "http://i.imgur.com/ZuCUnEb.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("art"), Description("Art.")]
@@ -302,7 +302,7 @@ namespace DSPlus.Examples
                     Title = "Art",
                     ImageUrl = "http://i.imgur.com/VkmmmQd.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("seeameme"), Description("When you see a meme.")]
@@ -316,7 +316,7 @@ namespace DSPlus.Examples
                     Title = "When you see a meme",
                     ImageUrl = "http://i.imgur.com/8GD0hbZ.jpg"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("thisis"), Description("This is meme man.")]
@@ -330,7 +330,7 @@ namespace DSPlus.Examples
                     Title = "This is meme man",
                     ImageUrl = "http://i.imgur.com/57vDOe6.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("deepdream"), Description("Deepdream'd meme man.")]
@@ -344,7 +344,7 @@ namespace DSPlus.Examples
                     Title = "Deep dream",
                     ImageUrl = "http://i.imgur.com/U666J6x.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("sword"), Description("Meme with a sword?")]
@@ -358,7 +358,7 @@ namespace DSPlus.Examples
                     Title = "Meme with a sword?",
                     ImageUrl = "http://i.imgur.com/T3FMXdu.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
 
             [Command("christmas"), Description("Beneath the christmas spike...")]
@@ -372,7 +372,7 @@ namespace DSPlus.Examples
                     Title = "Christmas spike",
                     ImageUrl = "http://i.imgur.com/uXIqUS7.png"
                 };
-                await ctx.RespondAsync(embed: embed);
+                await ctx.RespondAsync(embed);
             }
         }
     }
