@@ -41,6 +41,9 @@ dotnet_diagnostic.IDE0058.severity = none
 # CommandsNext doesn't support static methods.
 dotnet_diagnostic.CA1822.severity = none
 
+# We prefer our own variable names over the default ones.
+dotnet_diagnostic.CA1725.severity = none
+
 # this. preferences
 dotnet_style_qualification_for_field = false:error
 dotnet_style_qualification_for_property = false:error
