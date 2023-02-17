@@ -4,13 +4,13 @@ using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
 using DSharpPlus.Exceptions;
 
-namespace DSharpPlus.ExampleBots.CommandsNext.HelloWorld.Commands
+namespace DSharpPlus.ExampleBots.CommandsNext.FakeContext.Commands
 {
     public sealed class KickCommand : BaseCommandModule
     {
         // We use the RequirePermissions attribute to ensure that the user invoking the command has the required permissions.
         [Command("kick"), Description("Removes a member from the guild.")]
-        [RequirePermissions(Permissions.KickMembers)]
+        [RequirePermissions(Permissions.KickMembers), RequireGuild]
         public async Task KickAsync(CommandContext context, DiscordMember member, [RemainingText] string reason = "No reason provided.")
         {
             // The RemainingText attribute will capture all text after the argument.
