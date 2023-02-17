@@ -38,8 +38,8 @@ namespace DSharpPlus.ExampleBots.Core.HelloWorld
             // Register a simple ping command
             client.MessageCreated += async (client, eventArgs) =>
             {
-                // We use StringComparison.InvariantCultureIgnoreCase for case-insensitive matching.
-                if (eventArgs.Message.Content.Equals("!ping", StringComparison.InvariantCultureIgnoreCase))
+                // We use StringComparison.OrdinalIgnoreCase for case-insensitive matching.
+                if (eventArgs.Message.Content.Equals("!ping", StringComparison.OrdinalIgnoreCase))
                 {
                     // Respond to the message with "Pong!"
                     await eventArgs.Message.RespondAsync($"Pong! The gateway latency is {client.Ping}ms.");
