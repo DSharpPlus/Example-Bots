@@ -28,11 +28,18 @@ charset = utf-8
 
 # Organize usings
 dotnet_sort_system_directives_first = true:error
+
 # Using directive is unnecessary.
 dotnet_diagnostic.IDE0005.severity = error
 
 # Yell at people when they don't include the file header template
 dotnet_diagnostic.IDE0073.severity = error
+
+# We don't always need to use the return value in our examples.
+dotnet_diagnostic.IDE0058.severity = none
+
+# CommandsNext doesn't support static methods.
+dotnet_diagnostic.CA1822.severity = none
 
 # this. preferences
 dotnet_style_qualification_for_field = false:error
