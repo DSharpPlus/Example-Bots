@@ -9,9 +9,9 @@ namespace DSharpPlus.ExampleBots.CommandsNext.FakeContext.Commands
     {
         [Command("sudo"), Description("Runs the command as another user.")]
         [RequireUserPermissions(Permissions.Administrator), RequireGuild]
-        public async Task PingAsync(CommandContext context, DiscordMember member, [RemainingText] string arguments)
+        public async Task SudoAsync(CommandContext context, DiscordMember member, [RemainingText] string arguments)
         {
-            // First we try to find the command
+            // First we try to find the command. This is a required argument for the fake context.
             Command? command = context.CommandsNext.FindCommand(arguments, out string? rawArguments);
             if (command is null)
             {

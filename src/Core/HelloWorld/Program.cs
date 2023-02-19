@@ -30,7 +30,7 @@ namespace DSharpPlus.ExampleBots.Core.HelloWorld
                 // Privileged intents must be enabled in the Discord Developer Portal.
 
                 // TODO: Enable the message content intent in the Discord Developer Portal.
-                // The bot will not function otherwise.
+                // The !ping command will not work without it.
                 Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContents
             };
             DiscordClient client = new(config);

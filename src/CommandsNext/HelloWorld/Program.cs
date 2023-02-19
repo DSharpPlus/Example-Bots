@@ -54,7 +54,7 @@ namespace DSharpPlus.ExampleBots.CommandsNext.HelloWorld
             CommandsNextExtension commandsNext = client.UseCommandsNext(commandsConfig);
 
             // Register commands
-            // CommandsNext will search the assembly for any classes that inherit from BaseCommandModule.
+            // CommandsNext will search the assembly for any classes that inherit from BaseCommandModule and register them as commands.
             commandsNext.RegisterCommands(typeof(Program).Assembly);
 
             // Now we connect and log in.
