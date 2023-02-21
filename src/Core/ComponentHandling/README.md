@@ -4,7 +4,7 @@ This example sends a button with the `!button` command and responds with a rando
 # Sending the button
 ```cs
 // Generate the button id.
-Guid buttonId = new();
+Guid buttonId = Guid.NewGuid();
 
 // Add the button id to the ActiveButtons list
 ActiveButtons.Add(buttonId, DateTime.UtcNow);
