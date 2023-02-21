@@ -25,7 +25,7 @@ namespace DSharpPlus.ExampleBots.Core.ComponentHandling
             }
 
             // Generate the button id.
-            Guid buttonId = new();
+            Guid buttonId = Guid.NewGuid();
 
             // Add the button id to the ActiveButtons list
             ActiveButtons.Add(buttonId, DateTime.UtcNow);
