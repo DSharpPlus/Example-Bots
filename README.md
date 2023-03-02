@@ -12,4 +12,4 @@ If you're completely new to the library, I recommend checking out the [`./src/DS
 Each project is targetted for .NET 7. You may find the download [here](https://dotnet.microsoft.com/download/dotnet/7.0).
 
 # How to run the bots?
-Each bot is a standalone project. You can run them by navigating to the project directory and executing `dotnet run`. You will need to provide a bot token via the `DISCORD_TOKEN` environment variable: `DISCORD_TOKEN=<token> dotnet run`. You can find more information on how to obtain a bot token [here](https://discord.com/developers/docs/intro).
+Each bot is a standalone project. You can run them by navigating to the project directory and executing `dotnet run`. You will need to provide a bot token via the `DISCORD_TOKEN` environment variable: `DISCORD_TOKEN=<token> dotnet run`. Alternatively, you can source the [`.env`](./.env) file. With our current [`.vscode`](./vscode) configuration, VSC will by default attempt to source the [`.env`](./.env) file. You can find more information on how to obtain a bot token [here](https://discord.com/developers/docs/intro).
