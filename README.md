@@ -6,7 +6,7 @@ This repository contains example bots for the [DSharpPlus](https://github.com/DS
 The code contained is aimed for readability, not efficiency. While we attempt to follow best practices, we do not guarantee that the code is perfect. If you find any problems with the bot's functionality, please feel free to open an issue or a pull request.
 
 # Where should I start?
-If you're completely new to the library, I recommend checking out the [`./src/DSharpPlus.Core/HelloWorld/`](./src/DSharpPlus.Core/HelloWorld/) project. Once you feel you've understood how the library starts the bot, you can start using our extensions (such as CommandsNext or SlashCommands) to add further functionality to your bot.
+If you're completely new to the library, I recommend checking out the [`./src/Core/HelloWorld/`](./src/Core/HelloWorld/) project. Once you feel you've understood how the library starts the bot, you can start using our extensions (such as CommandsNext or SlashCommands) to add further functionality to your bot.
 
 # Requirements
 Each project is targetted for .NET 7. You may find the download [here](https://dotnet.microsoft.com/download/dotnet/7.0).
