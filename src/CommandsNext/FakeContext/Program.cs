@@ -23,7 +23,7 @@ namespace DSharpPlus.ExampleBots.CommandsNext.FakeContext
             }
 
             // Next, we instantiate our client.
-            DiscordConfiguration discordConfig = new()
+            DiscordConfiguration config = new()
             {
                 Token = token,
 
@@ -31,10 +31,10 @@ namespace DSharpPlus.ExampleBots.CommandsNext.FakeContext
                 // Privileged intents must be enabled in the Discord Developer Portal.
 
                 // TODO: Enable the message content intent in the Discord Developer Portal.
-                // The bot will not function otherwise.
+                // The our CommandsNext commands will not work without it.
                 Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContents
             };
-            DiscordClient client = new(discordConfig);
+            DiscordClient client = new(config);
 
             // We can specify a status for our bot. Let's set it to "online" and set the activity to "with fire".
             DiscordActivity status = new("with fire", ActivityType.Playing);
