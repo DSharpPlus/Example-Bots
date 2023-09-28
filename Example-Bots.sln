@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1DE5170D-7FE0-487D-9EAF-5327832D8A4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Basics.HelloWorld", "src\DSharpPlus.Examples.Basics.HelloWorld\DSharpPlus.Examples.Basics.HelloWorld.csproj", "{43280D9F-9965-4270-9082-12029948F559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Basics.Logging", "src\DSharpPlus.Examples.Basics.Logging\DSharpPlus.Examples.Basics.Logging.csproj", "{FD4B2179-ACDA-45DE-9FAA-8E49FD646C55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Basics.MessageBuilder", "src\DSharpPlus.Examples.Basics.MessageBuilder\DSharpPlus.Examples.Basics.MessageBuilder.csproj", "{781C73C9-DD09-4B5A-8285-4923287DA848}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Components.Buttons", "src\DSharpPlus.Examples.Components.Buttons\DSharpPlus.Examples.Components.Buttons.csproj", "{F6CA3EFD-D079-4A7B-ABD6-1484DE185CF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Components.Selects", "src\DSharpPlus.Examples.Components.Selects\DSharpPlus.Examples.Components.Selects.csproj", "{00471D68-8D82-469D-959F-1B6058248A15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43280D9F-9965-4270-9082-12029948F559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43280D9F-9965-4270-9082-12029948F559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43280D9F-9965-4270-9082-12029948F559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43280D9F-9965-4270-9082-12029948F559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD4B2179-ACDA-45DE-9FAA-8E49FD646C55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD4B2179-ACDA-45DE-9FAA-8E49FD646C55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD4B2179-ACDA-45DE-9FAA-8E49FD646C55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD4B2179-ACDA-45DE-9FAA-8E49FD646C55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781C73C9-DD09-4B5A-8285-4923287DA848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781C73C9-DD09-4B5A-8285-4923287DA848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781C73C9-DD09-4B5A-8285-4923287DA848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781C73C9-DD09-4B5A-8285-4923287DA848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CA3EFD-D079-4A7B-ABD6-1484DE185CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CA3EFD-D079-4A7B-ABD6-1484DE185CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CA3EFD-D079-4A7B-ABD6-1484DE185CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CA3EFD-D079-4A7B-ABD6-1484DE185CF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00471D68-8D82-469D-959F-1B6058248A15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00471D68-8D82-469D-959F-1B6058248A15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00471D68-8D82-469D-959F-1B6058248A15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00471D68-8D82-469D-959F-1B6058248A15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43280D9F-9965-4270-9082-12029948F559} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
+		{FD4B2179-ACDA-45DE-9FAA-8E49FD646C55} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
+		{781C73C9-DD09-4B5A-8285-4923287DA848} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
+		{F6CA3EFD-D079-4A7B-ABD6-1484DE185CF1} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
+		{00471D68-8D82-469D-959F-1B6058248A15} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
+	EndGlobalSection
+EndGlobal
