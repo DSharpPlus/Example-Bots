@@ -1,0 +1,51 @@
+2023-09-26 13:46:08.907 -05:00 [INF] DSharpPlus, version 5.0.0-nightly-01766
+2023-09-26 13:46:57.615 -05:00 [INF] DSharpPlus, version 5.0.0-nightly-01766
+2023-09-26 13:47:07.266 -05:00 [ERR] Request to "https://discord.com/api/v10/gateway/bot" triggered an exception
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at DSharpPlus.Exceptions.ServerErrorException..ctor(BaseRestRequest request, RestResponse response)
+   at DSharpPlus.Net.RestClient.ExecuteRequestAsync(BaseRestRequest request, RateLimitBucket bucket, TaskCompletionSource`1 ratelimitTcs)
+2023-09-26 13:47:07.421 -05:00 [ERR] Connection attempt failed, retrying in 7s
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at DSharpPlus.Exceptions.ServerErrorException..ctor(BaseRestRequest request, RestResponse response)
+   at DSharpPlus.Net.RestClient.ExecuteRequestAsync(BaseRestRequest request, RateLimitBucket bucket, TaskCompletionSource`1 ratelimitTcs)
+   at DSharpPlus.Net.DiscordApiClient.GetGatewayInfoAsync()
+   at DSharpPlus.BaseDiscordClient.GetGatewayInfoAsync(String token)
+   at DSharpPlus.DiscordClient.InternalUpdateGatewayAsync()
+   at DSharpPlus.DiscordClient.InternalConnectAsync()
+   at DSharpPlus.DiscordClient.ConnectAsync(DiscordActivity activity, Nullable`1 status, Nullable`1 idlesince)
+2023-09-26 13:47:51.840 -05:00 [ERR] Request to "https://discord.com/api/v10/gateway/bot" triggered an exception
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at DSharpPlus.Exceptions.ServerErrorException..ctor(BaseRestRequest request, RestResponse response)
+   at DSharpPlus.Net.RestClient.ExecuteRequestAsync(BaseRestRequest request, RateLimitBucket bucket, TaskCompletionSource`1 ratelimitTcs)
+2023-09-26 13:47:51.925 -05:00 [ERR] Connection attempt failed, retrying in 15s
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: <. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   at Newtonsoft.Json.Linq.JObject.Parse(String json)
+   at DSharpPlus.Exceptions.ServerErrorException..ctor(BaseRestRequest request, RestResponse response)
+   at DSharpPlus.Net.RestClient.ExecuteRequestAsync(BaseRestRequest request, RateLimitBucket bucket, TaskCompletionSource`1 ratelimitTcs)
+   at DSharpPlus.Net.DiscordApiClient.GetGatewayInfoAsync()
+   at DSharpPlus.BaseDiscordClient.GetGatewayInfoAsync(String token)
+   at DSharpPlus.DiscordClient.InternalUpdateGatewayAsync()
+   at DSharpPlus.DiscordClient.InternalConnectAsync()
+   at DSharpPlus.DiscordClient.ConnectAsync(DiscordActivity activity, Nullable`1 status, Nullable`1 idlesince)
+2023-09-26 13:48:36.155 -05:00 [INF] Discord bot started!
+2023-09-26 13:50:22.918 -05:00 [INF] DSharpPlus, version 5.0.0-nightly-01766
+2023-09-26 13:50:24.601 -05:00 [INF] Discord bot started!
