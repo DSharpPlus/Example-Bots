@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 
-namespace DSharpPlus.Examples.Basics.HelloWorld
+namespace DSharpPlus.Examples.Components.Modals
 {
     public static class Program
     {
