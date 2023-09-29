@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/DSharpPlus.Examples.Basics.HelloWorld/bin/Debug/net8.0/DSharpPlus.Examples.Basics.HelloWorld.dll",
+            "program": "${workspaceFolder}/src/DSharpPlus.Examples.Basics.HelloWorld/bin/Debug/net7.0/DSharpPlus.Examples.Basics.HelloWorld.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
