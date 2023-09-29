@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Command
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.CommandsNext.ErrorHandling", "src\DSharpPlus.Examples.CommandsNext.ErrorHandling\DSharpPlus.Examples.CommandsNext.ErrorHandling.csproj", "{6E106DAA-D075-4AD2-AA10-41327B9D3FF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.CommandsNext.GroupCommands", "src\DSharpPlus.Examples.CommandsNext.GroupCommands\DSharpPlus.Examples.CommandsNext.GroupCommands.csproj", "{5A3B56EC-DD5E-4D15-859B-94B09ADC2795}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,10 @@ Global
 		{6E106DAA-D075-4AD2-AA10-41327B9D3FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E106DAA-D075-4AD2-AA10-41327B9D3FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E106DAA-D075-4AD2-AA10-41327B9D3FF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3B56EC-DD5E-4D15-859B-94B09ADC2795}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3B56EC-DD5E-4D15-859B-94B09ADC2795}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3B56EC-DD5E-4D15-859B-94B09ADC2795}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3B56EC-DD5E-4D15-859B-94B09ADC2795}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{43280D9F-9965-4270-9082-12029948F559} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
@@ -86,5 +92,6 @@ Global
 		{1159DF74-2834-4A7B-97C2-384C8578F6A6} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
 		{9424B2A1-C411-4B1E-A0C3-48CAA91CDC4B} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
 		{6E106DAA-D075-4AD2-AA10-41327B9D3FF4} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
+		{5A3B56EC-DD5E-4D15-859B-94B09ADC2795} = {1DE5170D-7FE0-487D-9EAF-5327832D8A4B}
 	EndGlobalSection
 EndGlobal
