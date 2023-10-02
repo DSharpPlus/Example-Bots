@@ -8,7 +8,7 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: "!contains(toJSON(github.event.head_commit.message), '[ci-skip]')"
     steps:
       - name: Checkout
