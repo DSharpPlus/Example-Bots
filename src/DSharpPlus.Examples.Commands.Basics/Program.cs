@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using DSharpPlus.Commands;
 using DSharpPlus.Commands.Processors.SlashCommands;
 using DSharpPlus.Commands.Processors.TextCommands;
+using DSharpPlus.Commands.Processors.TextCommands.Parsing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -22,31 +23,30 @@ namespace DSharpPlus.Examples.Commands.Basics
             serviceCollection.AddSingleton(configuration);
             Assembly currentAssembly = typeof(Program).Assembly;
 
-
-            serviceCollection.AddSingleton(serviceProvider =>
+            serviceCollection.AddSingleton(async serviceProvider =>
             {
                 DiscordClient client = new(new DiscordConfiguration()
                 {
                     Token = configuration.GetValue<string>("discord:token") ??
                             throw new InvalidOperationException("Missing Discord token."),
-                    Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContents
+                    Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContents | TextCommandProcessor.RequiredIntents
                 });
 
                 CommandsExtension extension = client.UseCommands(new()
                 {
                     DebugGuildId = configuration.GetValue<ulong?>("discord:debug_guild_id", null),
                     ServiceProvider = serviceProvider,
+                    
                 });
-
-                extension.AddProcessorAsync(new TextCommandProcessor());
-                extension.AddProcessorAsync(new SlashCommandProcessor());
+                await extension.AddProcessorAsync(new TextCommandProcessor());
+                await extension.AddProcessorAsync(new SlashCommandProcessor());
                 extension.AddCommands(currentAssembly);
 
                 return client;
             });
             IServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 
-            DiscordClient client = serviceProvider.GetRequiredService<DiscordClient>();
+            DiscordClient client = await serviceProvider.GetRequiredService<Task<DiscordClient>>();
             await client.ConnectAsync();
 
             await Task.Delay(-1);
