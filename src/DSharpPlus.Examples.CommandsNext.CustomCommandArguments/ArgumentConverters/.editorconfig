@@ -1,5 +1,0 @@
-# .editorconfig
-root = false
-
-[*.{cs,vb}]
-dotnet_diagnostic.IDE0046.severity = none # Suppress conditional expressions for readability within the Ulid argument converter.

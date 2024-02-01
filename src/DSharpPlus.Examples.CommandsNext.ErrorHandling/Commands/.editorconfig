@@ -1,5 +1,0 @@
-# .editorconfig
-root = false
-
-[*.{cs,vb}]
-dotnet_diagnostic.CA1822.severity = none # Suppress CA1822 due to CommandsNext not supporting static commands.
