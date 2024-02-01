@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Compone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Components.Modals", "src\DSharpPlus.Examples.Components.Modals\DSharpPlus.Examples.Components.Modals.csproj", "{C5197139-4026-4EE9-A301-136FC3E10DA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.CommandsNext.Basics", "src\DSharpPlus.Examples.CommandsNext.Basics\DSharpPlus.Examples.CommandsNext.Basics.csproj", "{7135C15F-A8FD-4CEB-BA07-ED45FFBFFFF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.Commands.Basics", "src\DSharpPlus.Examples.Commands.Basics\DSharpPlus.Examples.Commands.Basics.csproj", "{7135C15F-A8FD-4CEB-BA07-ED45FFBFFFF5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSharpPlus.Examples.CommandsNext.CommandArguments", "src\DSharpPlus.Examples.CommandsNext.CommandArguments\DSharpPlus.Examples.CommandsNext.CommandArguments.csproj", "{1159DF74-2834-4A7B-97C2-384C8578F6A6}"
 EndProject
