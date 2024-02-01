@@ -7,7 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DSharpPlus" Version="5.0.0-nightly-01982" />
-    <PackageReference Include="DSharpPlus.Commands" Version="5.0.0-nightly-01970" />
+    <PackageReference Include="DSharpPlus.Commands" Version="5.0.0-nightly-01982" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="8.0.0" />

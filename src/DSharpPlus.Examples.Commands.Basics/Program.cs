@@ -14,7 +14,6 @@ namespace DSharpPlus.Examples.Commands.Basics
         public static async Task Main(string[] args)
         {
             ConfigurationBuilder configurationBuilder = new();
-            configurationBuilder.Sources.Clear();
             configurationBuilder.AddEnvironmentVariables("");
             configurationBuilder.AddCommandLine(args);
 
