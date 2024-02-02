@@ -15,7 +15,9 @@ namespace DSharpPlus.Examples.Commands.Basics
         public static async Task Main(string[] args)
         {
             ConfigurationBuilder configurationBuilder = new();
-            configurationBuilder.AddEnvironmentVariables("");
+            // you can also use environment vars, just uncomment this
+            // configurationBuilder.AddEnvironmentVariables("");
+            configurationBuilder.AddJsonFile("config.json", true, true);
             configurationBuilder.AddCommandLine(args);
 
             IConfiguration configuration = configurationBuilder.Build();
@@ -27,14 +29,14 @@ namespace DSharpPlus.Examples.Commands.Basics
             {
                 DiscordClient client = new(new DiscordConfiguration()
                 {
-                    Token = configuration.GetValue<string>("discord:token") ??
+                    Token = configuration.GetValue<string>("example_bot:token") ??
                             throw new InvalidOperationException("Missing Discord token."),
                     Intents = DiscordIntents.AllUnprivileged | DiscordIntents.MessageContents | TextCommandProcessor.RequiredIntents
                 });
 
                 CommandsExtension extension = client.UseCommands(new()
                 {
-                    DebugGuildId = configuration.GetValue<ulong?>("discord:debug_guild_id", null),
+                    DebugGuildId = configuration.GetValue<ulong?>("example_bot:debug_guild_id", null),
                     ServiceProvider = serviceProvider,
                     
                 });

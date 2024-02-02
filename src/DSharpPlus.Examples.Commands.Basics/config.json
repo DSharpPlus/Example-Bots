@@ -1,0 +1,6 @@
+{
+  "example_bot": {
+    "token": "bottoken",
+    "debug_guild_id": ""
+  }
+}
