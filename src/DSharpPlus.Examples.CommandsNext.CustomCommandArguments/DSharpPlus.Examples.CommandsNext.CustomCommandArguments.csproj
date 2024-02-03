@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DSharpPlus" Version="5.0.0-nightly-01788" />
-    <PackageReference Include="DSharpPlus.CommandsNext" Version="5.0.0-nightly-01788" />
+    <PackageReference Include="DSharpPlus" Version="5.0.0-nightly-01970" />
+    <PackageReference Include="DSharpPlus.CommandsNext" Version="5.0.0-nightly-01970" />
     <PackageReference Include="Ulid" Version="1.3.3" />
   </ItemGroup>
 </Project>
